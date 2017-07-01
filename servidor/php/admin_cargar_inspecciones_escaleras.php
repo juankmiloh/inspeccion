@@ -16,7 +16,18 @@
     while($row = mysqli_fetch_array($result)){ 
         $k_codinspeccion = $row['k_codinspeccion'];
         $o_consecutivoinsp = $row['o_consecutivoinsp'];
-        echo '<option value='.$k_codinspeccion.'>'.$o_consecutivoinsp.'</option>';
+        $k_codcliente = $row['k_codcliente'];
+        /*=============================================
+        * SE HACE UN SELECT A LA TABLA VALORES INICIALES PARA OBTENER EL NOMBRE DEL CLIENTE
+        *==============================================*/
+        $sql_cliente="SELECT * FROM escaleras_valores_iniciales WHERE k_codinspeccion=".$k_codinspeccion." AND k_codusuario=".$codigo_inspector."";
+        $result_cliente=mysqli_query($con, $sql_cliente);
+        while($row_cliente = mysqli_fetch_array($result_cliente)){
+            $n_cliente = $row_cliente['n_cliente'];
+            $n_equipo = $row_cliente['n_equipo'];
+        }
+
+        echo '<option value='.$k_codinspeccion.'>'.$o_consecutivoinsp.' - '.$n_cliente.' - '.$n_equipo.'</option>';
     }
 
     //desconectamos la base de datos

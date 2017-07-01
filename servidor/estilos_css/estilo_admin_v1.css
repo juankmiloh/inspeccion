@@ -233,7 +233,7 @@
     display: none;
   }
 
-  #div_select_inspector{
+  /*#div_select_inspector{
     padding-left: 22em;
   }
 
@@ -243,7 +243,7 @@
 
   #select_inspecciones{
     width: 19em;
-  }
+  }*/
 }
 
 /*Opciones para pantallas inferiores a 767px*/

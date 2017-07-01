@@ -7,6 +7,15 @@
 	$codigo_inspeccion = $_POST['inspeccion'];
 
 	/*=============================================
+	* SE HACE UN SELECT A LA TABLA USUARIOS PARA OBTENER EL NOMBRE DEL INSPECTOR
+	*==============================================*/
+    $sql="SELECT * FROM usuarios WHERE k_codusuario=".$codigo_inspector."";
+    $result=mysqli_query($con, $sql);
+    while($row = mysqli_fetch_array($result)){
+    	$n_nombre = $row['n_nombre'];
+    }
+
+	/*=============================================
 	* SE HACE UN SELECT A LA TABLA DE AUDITORIA PARA SABER CUANTAS INSPECCIONES A REALIZADO EL INSPECTOR
 	*==============================================*/
 	$sql="SELECT * FROM auditoria_inspecciones_escaleras WHERE k_codusuario=".$codigo_inspector."";
@@ -23,9 +32,10 @@
     /*=============================================
 	* SE HACE UN SELECT A LA TABLA DE VALORES INICIALES PARA OBTENER LA FECHA DE LA INSPECCION
 	*==============================================*/
-    $sql="SELECT f_fecha FROM escaleras_valores_iniciales WHERE k_codusuario=".$codigo_inspector." AND k_codinspeccion=".$codigo_inspeccion."";
+    $sql="SELECT * FROM escaleras_valores_iniciales WHERE k_codusuario=".$codigo_inspector." AND k_codinspeccion=".$codigo_inspeccion."";
     $result=mysqli_query($con, $sql);
     while($row = mysqli_fetch_array($result)){
+    	$n_cliente = $row['n_cliente'];
     	$fecha_inspeccion = $row['f_fecha'];
     }
     if (mysqli_query($con,$sql) == true){
@@ -111,6 +121,7 @@
 	    $o_password_pdf = $row['o_password_pdf'];
 	    
 	    $auditoria_inspecciones_escaleras[] = array('k_codusuario'=> $k_codusuario,
+	    								 'n_nombre'=> $n_nombre,
 										 'k_codinspeccion'=> $k_codinspeccion,
 										 'o_consecutivoinsp'=> $o_consecutivoinsp,
 										 'o_estado_envio'=> $o_estado_envio,
@@ -119,6 +130,7 @@
 										 'k_codcliente'=> $k_codcliente,
 										 'k_codinforme'=> $k_codinforme,
 										 'cantidad_inspecciones'=> $numero_inspecciones,
+										 'n_cliente'=> $n_cliente,
 										 'fecha_inspeccion'=> $fecha_inspeccion,
 										 'archivos_audio'=> $archivos_audio,
 										 'cantidad_fotos'=> $cantidad_fotos,

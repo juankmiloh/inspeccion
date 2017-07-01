@@ -20,8 +20,8 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../estilos_css/estilo_admin.css"/>
-    <script type="text/javascript" src="../javascript/script_admin.js"/></script>
+    <link rel="stylesheet" type="text/css" href="../estilos_css/estilo_admin_v1.css"/>
+    <script type="text/javascript" src="../javascript/script_admin_v5.js"/></script>
     <script type="text/javascript">
 		$(document).ready(function(){ 
             //alert("sirve js");
@@ -88,7 +88,7 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <div class="container">
+    <div class="container-fluid">
         <header>
             <!-- Contenedor de la imagen banner y el título de la cabecera -->
             <div class="row sombra_banner" id="top_home">
@@ -126,8 +126,9 @@
                 <div class="div_division sombra"></div>
                 <br>             
             </div>
+            
             <div class="col-xs-12 col-md-3"></div>
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-md-3">
                 <label for="select_tipo_inspeccion">TIPO DE INSPECCIÓN</label>
                 <select class="form-control" id="select_tipo_inspeccion" name="select_tipo_inspeccion" onchange="enviarTipoInspeccion(this)">
                     <option value="n/a">Seleccione un tipo de inspección</option>
@@ -135,23 +136,26 @@
                     <option value="2">Puertas Eléctricas</option>
                     <option value="3">Escaleras - Andenes</option>
                 </select>
-                <br>
             </div>
-            <div class="col-xs-12 col-md-3"></div>
 
-            <div class="col-xs-12 col-md-6" id="div_select_inspector">
+            <div class="col-xs-12 col-md-3" id="div_select_inspector">
                 <label for="select_inspector">INSPECTOR</label>
                 <select class="form-control" id="select_inspector" name="select_inspector" onchange="cargarInspecciones(this)">
                     <option value="n/a">Seleccione un inspector</option>
                 </select>
             </div>
+            <div class="col-xs-12 col-md-3"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-3"></div>
             <div class="col-xs-12 col-md-6">
-                <br class="salto_xs">
                 <label for="select_inspecciones">INSPECCIÓN</label>
                 <select class="form-control" id="select_inspecciones" name="select_inspecciones" onchange="cargarDatos(this)">
                     <option value="n/a">Seleccione una inspección</option>
                 </select>
             </div>
+            <div class="col-xs-12 col-md-3"></div>
         </div>
 
         <div id="div_ascensores">
@@ -162,38 +166,41 @@
                 <table class="table table-hover table-bordered" id="tabla_ascensores">
                     <thead>
                         <tr>
-                            <td colspan="9" bgcolor="#70b6e0">
+                            <th colspan="10" bgcolor="#70b6e0">
                                 <center><b>RESUMEN DE INSPECCIÓN | ASCENSORES</b></center>
-                            </td>
+                            </th>
                         </tr>
                         <tr>
-                            <td class="active centrar_texto">
+                            <th class="active centrar_texto">
                                 <b>INSPECTOR</b>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>CONSECUTIVO</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto" style="width:10%">
+                                <center><b>CLIENTE</b></center>
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>REVISIÓN</b></center></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>NO CUMPLE</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>FECHA</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>AUDIO DE INFORME</b></center>
-                            </td>
-                            <td class="active centrar_texto">
-                                <center><b>DETALLE</b></center>
-                            </td>
-                            <td class="active centrar_texto">
-                                <center><b>FOTOGRAFÍAS</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>PASS PDF</b></center>
-                            </td>
+                            </th>
+                            <th class="active centrar_texto">
+                                <center><b>FOTOGRAFÍAS</b></center>
+                            </th>
+                            <th class="active centrar_texto">
+                                <center><b>DETALLE</b></center>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -211,38 +218,41 @@
                 <table class="table table-hover table-bordered" id="tabla_puertas">
                     <thead>
                         <tr>
-                            <td colspan="9" bgcolor="#70b6e0">
+                            <th colspan="10" bgcolor="#70b6e0">
                                 <center><b>RESUMEN DE INSPECCIÓN | PUERTAS</b></center>
-                            </td>
+                            </th>
                         </tr>
                         <tr>
-                            <td class="active centrar_texto">
+                            <th class="active centrar_texto">
                                 <b>INSPECTOR</b>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>CONSECUTIVO</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto" style="width:10%">
+                                <center><b>CLIENTE</b></center>
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>REVISIÓN</b></center></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>NO CUMPLE</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>FECHA</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>AUDIO DE INFORME</b></center>
-                            </td>
-                            <td class="active centrar_texto">
-                                <center><b>DETALLE</b></center>
-                            </td>
-                            <td class="active centrar_texto">
-                                <center><b>FOTOGRAFÍAS</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>PASS PDF</b></center>
-                            </td>
+                            </th>
+                            <th class="active centrar_texto">
+                                <center><b>FOTOGRAFÍAS</b></center>
+                            </th>
+                            <th class="active centrar_texto">
+                                <center><b>DETALLE</b></center>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -260,38 +270,41 @@
                 <table class="table table-hover table-bordered" id="tabla_escaleras">
                     <thead>
                         <tr>
-                            <td colspan="9" bgcolor="#70b6e0">
+                            <th colspan="10" bgcolor="#70b6e0">
                                 <center><b>RESUMEN DE INSPECCIÓN | ESCALERAS</b></center>
-                            </td>
+                            </th>
                         </tr>
                         <tr>
-                            <td class="active centrar_texto">
+                            <th class="active centrar_texto">
                                 <b>INSPECTOR</b>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>CONSECUTIVO</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto" style="width:10%">
+                                <center><b>CLIENTE</b></center>
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>REVISIÓN</b></center></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>NO CUMPLE</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>FECHA</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>AUDIO DE INFORME</b></center>
-                            </td>
-                            <td class="active centrar_texto">
-                                <center><b>DETALLE</b></center>
-                            </td>
-                            <td class="active centrar_texto">
-                                <center><b>FOTOGRAFÍAS</b></center>
-                            </td>
-                            <td class="active centrar_texto">
+                            </th>
+                            <th class="active centrar_texto">
                                 <center><b>PASS PDF</b></center>
-                            </td>
+                            </th>
+                            <th class="active centrar_texto">
+                                <center><b>FOTOGRAFÍAS</b></center>
+                            </th>
+                            <th class="active centrar_texto">
+                                <center><b>DETALLE</b></center>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -305,6 +318,7 @@
         <div class="div_division sombra" id="div_focalizar"></div>
         <footer>
             <div class="row">
+            <br>
                 <div class="col-xs-12 col-md-12" style="text-align: center;">
                     <br>
                     <span style="color: #428bca;"><b>Montajes & Procesos M.P SAS</b></span>
@@ -313,6 +327,14 @@
                 </div>
             </div>
         </footer>
+        <div class="row" style="width: 100%; position: fixed; bottom: 0px; border: 1px solid; background-color: #060d14;">
+            <div class="col-xs-12 col-md-12" style="text-align: center;">
+                <span style="color: #ecf3f9;">Aplicación desarrollada por</span>
+                <a href="mailto:juankmiloh@hotmail.com" style="color: #b3d0e9;">
+                    juankmiloh
+                </a>
+            </div>
+        </div>
         <br><br><br><br><br>
     </div>
 </body>

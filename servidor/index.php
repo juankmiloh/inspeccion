@@ -35,9 +35,8 @@
             </div>
         </div>
     </div> 
-    <br>
 
-	<div class="container">
+	<div class="container-fluid">
         <header>
             <!-- Contenedor de la imagen banner y el título de la cabecera -->
             <div class="row sombra_banner" id="top_home">
@@ -144,6 +143,14 @@
                 </div>
             </div>
         </footer>
+        <div class="row" style="width: 100%; position: fixed; bottom: 0px; border: 1px solid; background-color: #060d14;">
+            <div class="col-xs-12 col-md-12" style="text-align: center;">
+                <span style="color: #ecf3f9;">Aplicación desarrollada por</span>
+                <a href="mailto:juankmiloh@hotmail.com" style="color: #b3d0e9;">
+                    juankmiloh
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

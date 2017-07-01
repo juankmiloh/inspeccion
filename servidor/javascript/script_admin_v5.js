@@ -163,7 +163,7 @@ function cargarInspecciones(select){
 }
 
 /*=============================================
-* Funcion que se ejecuta al seleccionar un inspeccion del select de inspecciones
+* Funcion que se ejecuta al seleccionar una inspeccion del select de inspecciones
 * Hace una consulta ajax que recibe una respuesta en formato JSON
 * Se recorre el JSON y se muestran los datos en una tabla html
 *==============================================*/
@@ -191,10 +191,13 @@ function cargarDatos(select){
 				  	var contenidoTabla = 
 				  		'<tr id="fila'+items.k_codinspeccion+'">'+
 	                        '<td class="centrar_texto" style="padding: 25px;">'+
-	                            items.k_codusuario+
+	                            items.n_nombre+
 	                        '</td>'+
 	                        '<td class="centrar_texto" style="padding: 25px;">'+
 	                            items.o_consecutivoinsp+
+	                        '</td>'+
+	                        '<td class="centrar_texto" style="padding: 25px;">'+
+	                            items.n_cliente+
 	                        '</td>'+
 	                        '<td class="centrar_texto" style="padding: 25px;">'+
 	                            items.o_revision+
@@ -210,10 +213,8 @@ function cargarDatos(select){
                                     '<option value="n/a">Seleccione un audio</option>'+
                                 '</select>'+
 	                        '</td>'+
-	                        '<td class="centrar_texto" style="padding: 15px;">'+
-	                            '<a href="../php/ascensor_modificar_lista_inspeccion.php?id_inspector='+items.k_codusuario+'&cod_inspeccion='+items.k_codinspeccion+'" target="_blank">'+
-	                                '<img src="../images/lupa.png" style="width: 3em;">'+
-	                            '</a>'+
+	                        '<td class="centrar_texto" style="padding: 25px;">'+
+	                            items.o_password_pdf+
 	                        '</td>';
 	                        if (items.cantidad_fotos > 0) {
 	                        	contenidoTabla += 
@@ -229,13 +230,15 @@ function cargarDatos(select){
 		                        '</td>';
 	                        }
 	               	contenidoTabla += 
-	               			'<td class="centrar_texto" style="padding: 25px;">'+
-	                            items.o_password_pdf+
+	               			'<td class="centrar_texto" style="padding: 15px;">'+
+	                            '<a href="../php/ascensor_modificar_lista_inspeccion.php?id_inspector='+items.k_codusuario+'&cod_inspeccion='+items.k_codinspeccion+'" target="_blank">'+
+	                                '<img src="../images/lupa.png" style="width: 3em;">'+
+	                            '</a>'+
 	                        '</td>'+
 	                    '</tr>';
 	                //alert(items.cantidad_inspecciones);
 				    $("#tabla_ascensores tbody").append(contenidoTabla);
-				    $("#select_inspecciones").find("option[value='"+items.k_codinspeccion+"']").remove();
+				    $("#select_inspecciones").find("option[value='"+items.k_codinspeccion+"']").remove();//se quita del select el consecutivo de inspeccion
 
 				    if (items.archivos_audio != "") {
 				    	$.each(items.archivos_audio, function (i, item) {
@@ -271,10 +274,13 @@ function cargarDatos(select){
 				  	var contenidoTabla = 
 				  		'<tr id="fila'+items.k_codinspeccion+'">'+
 	                        '<td class="centrar_texto" style="padding: 25px;">'+
-	                            items.k_codusuario+
+	                            items.n_nombre+
 	                        '</td>'+
 	                        '<td class="centrar_texto" style="padding: 25px;">'+
 	                            items.o_consecutivoinsp+
+	                        '</td>'+
+	                        '<td class="centrar_texto" style="padding: 25px;">'+
+	                            items.n_cliente+
 	                        '</td>'+
 	                        '<td class="centrar_texto" style="padding: 25px;">'+
 	                            items.o_revision+
@@ -290,10 +296,8 @@ function cargarDatos(select){
                                     '<option value="n/a">Seleccione un audio</option>'+
                                 '</select>'+
 	                        '</td>'+
-	                        '<td class="centrar_texto" style="padding: 15px;">'+
-	                            '<a href="../php/puertas_modificar_lista_inspeccion.php?id_inspector='+items.k_codusuario+'&cod_inspeccion='+items.k_codinspeccion+'" target="_blank">'+
-	                                '<img src="../images/lupa.png" style="width: 3em;">'+
-	                            '</a>'+
+	                        '<td class="centrar_texto" style="padding: 25px;">'+
+	                            items.o_password_pdf+
 	                        '</td>';
 	                        if (items.cantidad_fotos > 0) {
 	                        	contenidoTabla += 
@@ -309,8 +313,10 @@ function cargarDatos(select){
 		                        '</td>';
 	                        }
 	               	contenidoTabla += 
-	               			'<td class="centrar_texto" style="padding: 25px;">'+
-	                            items.o_password_pdf+
+	               			'<td class="centrar_texto" style="padding: 15px;">'+
+	                            '<a href="../php/puertas_modificar_lista_inspeccion.php?id_inspector='+items.k_codusuario+'&cod_inspeccion='+items.k_codinspeccion+'" target="_blank">'+
+	                                '<img src="../images/lupa.png" style="width: 3em;">'+
+	                            '</a>'+
 	                        '</td>'+
 	                    '</tr>';
 	                //alert(items.cantidad_inspecciones);
@@ -339,7 +345,7 @@ function cargarDatos(select){
 	if (tipo_inspeccion == 3) {
 		//alert("escaleras");
 		$('#div_ascensores').hide('fast');
-		$('#div_escaleras').hide('fast');
+		$('#div_puertas').hide('fast');
 		$('#div_escaleras').show('fast');
 		$.ajax({
 			url: "admin_obtener_datos_inspeccion_escaleras.php",
@@ -351,10 +357,13 @@ function cargarDatos(select){
 				  	var contenidoTabla = 
 				  		'<tr id="fila'+items.k_codinspeccion+'">'+
 	                        '<td class="centrar_texto" style="padding: 25px;">'+
-	                            items.k_codusuario+
+	                            items.n_nombre+
 	                        '</td>'+
 	                        '<td class="centrar_texto" style="padding: 25px;">'+
 	                            items.o_consecutivoinsp+
+	                        '</td>'+
+	                        '<td class="centrar_texto" style="padding: 25px;">'+
+	                            items.n_cliente+
 	                        '</td>'+
 	                        '<td class="centrar_texto" style="padding: 25px;">'+
 	                            items.o_revision+
@@ -370,10 +379,8 @@ function cargarDatos(select){
                                     '<option value="n/a">Seleccione un audio</option>'+
                                 '</select>'+
 	                        '</td>'+
-	                        '<td class="centrar_texto" style="padding: 15px;">'+
-	                            '<a href="../php/escaleras_modificar_lista_inspeccion.php?id_inspector='+items.k_codusuario+'&cod_inspeccion='+items.k_codinspeccion+'" target="_blank">'+
-	                                '<img src="../images/lupa.png" style="width: 3em;">'+
-	                            '</a>'+
+	                        '<td class="centrar_texto" style="padding: 25px;">'+
+	                            items.o_password_pdf+
 	                        '</td>';
 	                        if (items.cantidad_fotos > 0) {
 	                        	contenidoTabla += 
@@ -389,8 +396,10 @@ function cargarDatos(select){
 		                        '</td>';
 	                        }
 	               	contenidoTabla += 
-	               			'<td class="centrar_texto" style="padding: 25px;">'+
-	                            items.o_password_pdf+
+	               			'<td class="centrar_texto" style="padding: 15px;">'+
+	                            '<a href="../php/escaleras_modificar_lista_inspeccion.php?id_inspector='+items.k_codusuario+'&cod_inspeccion='+items.k_codinspeccion+'" target="_blank">'+
+	                                '<img src="../images/lupa.png" style="width: 3em;">'+
+	                            '</a>'+
 	                        '</td>'+
 	                    '</tr>';
 	                //alert(items.cantidad_inspecciones);
