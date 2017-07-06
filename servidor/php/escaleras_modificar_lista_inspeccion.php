@@ -19,7 +19,7 @@
 
     <link rel="shortcut icon" href="../images/favicon_1.ico" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../estilos_css/estilos_lista_inspeccion.css"/>
+    <link rel="stylesheet" type="text/css" href="../estilos_css/estilos_lista_inspeccionv2.css"/>
     <link href="../css/lightgallery.css" rel="stylesheet">
     <link href="../css/lightgallery-theme.css" rel="stylesheet">
 
@@ -27,19 +27,20 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/Concurrent.Thread.js"></script>
     <script type="text/javascript" src="../javascript/script_escaleras_modificar_cargar_items.js"/></script>
-    <script type="text/javascript" src="../javascript/script_escaleras_modificar_cargar_valores.js"/></script>
-    <script type="text/javascript" src="../javascript/script_escaleras_modificar_guardar_inspeccion.js"/></script>
+    <script type="text/javascript" src="../javascript/script_escaleras_modificar_cargar_valoresv2.js"/></script>
+    <script type="text/javascript" src="../javascript/script_escaleras_modificar_guardar_inspeccionv1.js"/></script>
     <script type="text/javascript" src="../javascript/script_escaleras_enviar_registroinspeccion.js"/></script>
 </head>
 <body>
     <a name="arriba"></a> <!--ESTO SE PONE PARA CUANDO SE GUARDE, SE DEVUELVA A LA PARTE DE ARRIBA DE LA PAGINA-->
     <!-- DIV's de imagen de carga oculto -->
-    <div class="fbback" style="z-index: 57;"></div>
+    <div class="fbback"></div>
+    <div class="fbback_1"></div> <!-- div que oculta los controles cuando se oprime el btnF1 -->
     
     <div class="container" id="fbdrag1">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="fb" style="z-index: 57;">
+                <div class="fb">
                     <div class="dheader">Montajes & Procesos M.P SAS</div>
                     <div class="dcontent">
                         <div style="text-align:center;padding-top:20px">
@@ -92,7 +93,7 @@
 
     <div class="container contenedor_cabecera">
         <header>
-            <nav class="navbar navbar-default navbar-fixed-top navbar-inverse sombra">
+            <nav id="nav_cabecera" class="navbar navbar-default navbar-fixed-top navbar-inverse sombra">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
@@ -234,6 +235,10 @@
                             <input type="text" class="form-control" id="text_consecutivo" name="text_consecutivo" readonly>
                         </div>
                     </div>  
+                </div>
+                <div class="col-xs-12 col-md-12">
+                    <label for="text_dir_cliente">DIRECCIÓN DEL CLIENTE</label>
+                    <input type="text" class="form-control" id="text_dir_cliente" name="text_dir_cliente" placeholder="Dirección del cliente" required>
                 </div>
             </div>
             <hr>
@@ -543,10 +548,9 @@
 
                         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-                        <hr>
-
                         <!-- ///////////////////// CONTENEDOR DEL BOTON QUE PERMITE GUARDAR LA INSPECCION ///////////////////////////// -->
 
+                        <!-- <hr>
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6" style="text-align: right;">
                                 <a href="javascript:window.close()">
@@ -563,8 +567,23 @@
                                 </button>
                             </div>  
                         </div>
+                        <hr> -->
 
-                        <hr>
+                        <div class="contenedor_btns_flotantes">
+                            <button type="button" class="botonF1">
+                                <span>+</span>
+                            </button>
+                            <button type="submit" class="btn_flotante botonF2" id="btn_guardar" onclick="mostrarDivs();">
+                                <span class="texto_boton_flotante">Actualizar</span>
+                                <span class="glyphicon glyphicon-floppy-disk img_boton_flotante"></span>
+                            </button>
+                            <a href="javascript:window.close()">
+                                <button type="button" class="btn_flotante botonF3">
+                                    <span class="texto_boton_flotante">Cerrar</span>
+                                    <span class="glyphicon glyphicon-eye-close img_boton_flotante"></span>
+                                </button>
+                            </a>
+                        </div>
 
                         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
                     

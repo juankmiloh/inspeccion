@@ -515,7 +515,7 @@
                                                       echo "<b>Ver imagen:</b><br>";
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
-                                                            echo "*".$n_fotografia."<br>";
+                                                            echo $n_fotografia."<br>";
                                                             // echo '<a href="http://10.21.53.240:8080/inspeccion/servidor/ascensores/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';
@@ -600,7 +600,7 @@
                                                       echo "<b>Ver imagen:</b><br>";
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
-                                                            echo "*".$n_fotografia."<br>";
+                                                            echo $n_fotografia."<br>";
                                                             // echo '<a href="http://10.21.53.240:8080/inspeccion/servidor/ascensores/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';
@@ -685,7 +685,7 @@
                                                       echo "<b>Ver imagen:</b><br>";
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
-                                                            echo "*".$n_fotografia."<br>";
+                                                            echo $n_fotografia."<br>";
                                                             // echo '<a href="http://10.21.53.240:8080/inspeccion/servidor/ascensores/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';
@@ -770,7 +770,7 @@
                                                       echo "<b>Ver imagen:</b><br>";
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
-                                                            echo "*".$n_fotografia."<br>";
+                                                            echo $n_fotografia."<br>";
                                                             // echo '<a href="http://10.21.53.240:8080/inspeccion/servidor/ascensores/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';

@@ -91,6 +91,7 @@ function guardarInspeccion(){
   var consecutivo_inspeccion = $("#text_consecutivo").val();
 
   var textCliente = $("#text_cliente").val();
+  var textDireccioncliente = $("#text_dir_cliente").val();
   var textEquipo = $("#text_equipo").val();
   var textEmpresaMantenimiento = $("#text_empresaMantenimiento").val();
   var textTipoAccionamiento = $("#text_tipoAccionamiento").val();
@@ -122,7 +123,7 @@ function guardarInspeccion(){
   * Actualizar valores en las tablas
   * ============================= */
   /* Actualizar valores en la tabla ascensor_valores_iniciales */
-  updateItemsAscensorValoresIniciales(textCliente,textEquipo,textEmpresaMantenimiento,textTipoAccionamiento,textCapacidadPersonas,textCapacidadPeso,textNumeroParadas,textFecha,textUltimoMto,textInicioServicio,textUltimaInspec,hora, codigo_inspeccion,'Inicial',cod_inspector);
+  updateItemsAscensorValoresIniciales(textCliente,textDireccioncliente,textEquipo,textEmpresaMantenimiento,textTipoAccionamiento,textCapacidadPersonas,textCapacidadPeso,textNumeroParadas,textFecha,textUltimoMto,textInicioServicio,textUltimaInspec,hora, codigo_inspeccion,'Inicial',cod_inspector);
   /* Actualizar valores en la tabla ascensor_valores_preliminar */
   var cantidadItemsTAIPRE = 3;
   for (var i = 1; i <= cantidadItemsTAIPRE; i++) {
@@ -215,13 +216,14 @@ function guardarInspeccion(){
 /*=============================================
 * Funcion para actualizar una fila en la tabla ascensor_valores_iniciales
 *==============================================*/
-function updateItemsAscensorValoresIniciales(textCliente,textEquipo,textEmpresaMantenimiento,
+function updateItemsAscensorValoresIniciales(textCliente,textDireccioncliente,textEquipo,textEmpresaMantenimiento,
                                              textTipoAccionamiento,textCapacidadPersonas,textCapacidadPeso,
                                              textNumeroParadas,textFecha,textUltimoMto,textInicioServicio,
                                              textUltimaInspec,hora, k_codinspeccion,tipo_informe,cod_inspector) {
   var parametros = {"inspector" : cod_inspector,
                     "inspeccion" : k_codinspeccion,
                     "cliente" : textCliente,
+                    "cliente_direccion" : textDireccioncliente,
                     "equipo" : textEquipo,
                     "empresa_mto" : textEmpresaMantenimiento,
                     "accionamiento" : textTipoAccionamiento,

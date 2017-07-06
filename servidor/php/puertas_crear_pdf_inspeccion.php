@@ -810,7 +810,7 @@
                                                       echo "<b>Ver imagen:</b><br>";
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
-                                                            echo "*".$n_fotografia."<br>";
+                                                            echo $n_fotografia."<br>";
                                                             // echo '<a href="http://www.montajesyprocesos.com/inspeccion/servidor/puertas/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';
@@ -895,7 +895,7 @@
                                                       echo "<b>Ver imagen:</b><br>";
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
-                                                            echo "*".$n_fotografia."<br>";
+                                                            echo $n_fotografia."<br>";
                                                             // echo '<a href="http://www.montajesyprocesos.com/inspeccion/servidor/puertas/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';
@@ -980,7 +980,7 @@
                                                       echo "<b>Ver imagen:</b><br>";
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
-                                                            echo "*".$n_fotografia."<br>";
+                                                            echo $n_fotografia."<br>";
                                                             // echo '<a href="http://www.montajesyprocesos.com/inspeccion/servidor/puertas/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';
@@ -1147,10 +1147,10 @@
                                                 $result = mysqli_query($con, $sql);
                                                 $numero_fotos=mysqli_num_rows($result);
                                                 if ($numero_fotos > 0) {
-                                                      echo "<b>Ver imagen:</b><br>";
+                                                      echo "<b>-> Ver imagen:</b><br>";
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
-                                                            echo "*".$n_fotografia."<br>";
+                                                            echo $n_fotografia."<br>";
                                                             // echo '<a href="http://www.montajesyprocesos.com/inspeccion/servidor/puertas/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';

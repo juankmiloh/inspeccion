@@ -20,7 +20,7 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../estilos_css/estilos_lista_inspeccion.css">
+    <link rel="stylesheet" type="text/css" href="../estilos_css/estilos_lista_inspeccionv2.css">
     <script type="text/javascript" src="../javascript/script_escaleras_fotografias.js"/></script>
     <script type="text/javascript">
 		$(document).ready(function(){ 

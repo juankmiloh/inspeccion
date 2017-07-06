@@ -93,6 +93,7 @@ function guardarInspeccion(){
   var consecutivo_inspeccion = $("#text_consecutivo").val();
 
   var textCliente = $("#text_cliente").val();
+  var textDireccioncliente = $("#text_dir_cliente").val();
   var textEquipo = $("#text_equipo").val();
   var textEmpresaMantenimiento = $("#text_empresaMantenimiento").val();
   var text_desc_puerta = $("#text_desc_puerta").val();
@@ -135,6 +136,7 @@ function guardarInspeccion(){
   * ============================= */
   /* Actualizar valores en la tabla puertas_valores_iniciales */
   updateItemsPuertasValoresIniciales(textCliente,
+                                    textDireccioncliente,
                                     textEquipo,
                                     textEmpresaMantenimiento,
                                     text_desc_puerta,
@@ -253,7 +255,7 @@ function guardarInspeccion(){
 /*=============================================
 * Funcion para actualizar una fila en la tabla puertas_valores_iniciales
 *==============================================*/
-function updateItemsPuertasValoresIniciales(n_cliente,n_equipo,n_empresamto,o_desc_puerta,
+function updateItemsPuertasValoresIniciales(n_cliente,textDireccioncliente,n_equipo,n_empresamto,o_desc_puerta,
                                             o_tipo_puerta,o_motorizacion,o_acceso,o_accionamiento,
                                             o_operador,o_hoja,o_transmision,o_identificacion,
                                             f_fecha,v_ancho,v_alto,v_codigo,o_consecutivoinsp,
@@ -262,6 +264,7 @@ function updateItemsPuertasValoresIniciales(n_cliente,n_equipo,n_empresamto,o_de
   var parametros = {"inspector" : k_codusuario,
                     "inspeccion" : k_codinspeccion,
                     "n_cliente" : n_cliente,
+                    "cliente_direccion" : textDireccioncliente,
                     "n_equipo" : n_equipo,
                     "n_empresamto" : n_empresamto,
                     "o_desc_puerta" : o_desc_puerta,

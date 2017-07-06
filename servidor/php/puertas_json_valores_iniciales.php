@@ -6,6 +6,24 @@ include ("conexion_BD.php");
 $codigo_inspector = $_POST['inspector'];
 $codigo_inspeccion = $_POST['inspeccion'];
 
+/*=============================================
+* CONSULTA QUE PERMITE OBTENER EL CODIGO DEL CLIENTE ASOCIADO A LA INSPECCION
+*==============================================*/
+$sql = "SELECT * FROM auditoria_inspecciones_puertas WHERE k_codusuario=".$codigo_inspector." AND k_codinspeccion=".$codigo_inspeccion."";
+$result=mysqli_query($con, $sql);
+while($row = mysqli_fetch_array($result)){
+	$k_codcliente = $row['k_codcliente'];
+}
+
+/*=============================================
+* CONSULTA QUE PERMITE OBTENER LA DIRECCION DEL CLIENTE
+*==============================================*/
+$sql = "SELECT * FROM cliente WHERE k_codusuario=".$codigo_inspector." AND k_codcliente=".$k_codcliente."";
+$result=mysqli_query($con, $sql);
+while($row = mysqli_fetch_array($result)){
+	$o_direccion_cliente = $row['o_direccion'];
+}
+
 //generamos la consulta
 $sql = "SELECT * FROM puertas_valores_iniciales WHERE k_codusuario=".$codigo_inspector." AND k_codinspeccion=".$codigo_inspeccion."";
 mysqli_set_charset($con, "utf8"); //formato de datos utf8
@@ -36,6 +54,7 @@ while($row = mysqli_fetch_array($result)){
 	$consecutivo = $row['o_consecutivoinsp'];
     
     $puertas_valores_iniciales[] = array('n_cliente'=> $textCliente,
+										 'o_direccion_cliente'=> $o_direccion_cliente,
 										 'n_equipo'=> $textEquipo,
 										 'n_empresamto'=> $textEmpresaMantenimiento,
 										 'o_desc_puerta'=> $text_desc_puerta,

@@ -93,6 +93,7 @@ function guardarInspeccion(){
   var consecutivo_inspeccion = $("#text_consecutivo").val();
 
   var textCliente = $("#text_cliente").val();
+  var textDireccioncliente = $("#text_dir_cliente").val();
   var textEquipo = $("#text_equipo").val();
   var textEmpresaMantenimiento = $("#text_empresaMantenimiento").val();
   var text_velocidad = $("#text_velocidad").val();
@@ -129,6 +130,7 @@ function guardarInspeccion(){
   * ============================= */
   /* Actualizar valores en la tabla escaleras_valores_iniciales */
   updateItemsEscalerasValoresIniciales(textCliente,
+                                       textDireccioncliente,
                                        textEquipo,
                                        textEmpresaMantenimiento,
                                        text_velocidad,
@@ -192,12 +194,13 @@ function guardarInspeccion(){
 /*=============================================
 * Funcion para actualizar una fila en la tabla escaleras_valores_iniciales
 *==============================================*/
-function updateItemsEscalerasValoresIniciales(n_cliente,n_equipo,n_empresamto,v_velocidad,o_tipo_equipo,v_inclinacion,
+function updateItemsEscalerasValoresIniciales(n_cliente,textDireccioncliente,n_equipo,n_empresamto,v_velocidad,o_tipo_equipo,v_inclinacion,
   v_ancho_paso,f_fecha,ultimo_mto,inicio_servicio,ultima_inspeccion,v_codigo,o_consecutivoinsp,h_hora,o_tipo_informe,
   k_codusuario,k_codinspeccion) {
   var parametros = {"inspector" : k_codusuario,
                     "inspeccion" : k_codinspeccion,
                     "n_cliente" : n_cliente,
+                    "cliente_direccion" : textDireccioncliente,
                     "n_equipo" : n_equipo,
                     "n_empresamto" : n_empresamto,
                     "v_velocidad" : v_velocidad,

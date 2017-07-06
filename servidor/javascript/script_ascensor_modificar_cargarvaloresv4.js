@@ -15,6 +15,9 @@ $(document).ready(function($){
   cerrarVentanaAudio();
   $('#botonIniciar0').attr("disabled", true);
   $("#link_botonIniciar0").attr("href", "./ascensor_registros_fotograficos.php?id_inspector="+cod_inspector+"&cod_inspeccion="+cod_inspeccion+"&cod_item=0");
+  clickBtnF1();
+  clickBtnF2_guardar();
+  //dejarContenerdorBtnsFLot();
 });
 
 var cod_inspeccion = getQueryVariable('cod_inspeccion');
@@ -31,6 +34,51 @@ function cerrarVentanaAudio(){
   $("#btn_cerrar_modal").click(function(){
     $("#audio").remove(); //se elimina el div por si hay algun audio cargado
   });
+}
+
+/*=============================================
+* Funcion que se ejecuta cuando se presiona el boton (+) de la lista de inspeccion
+* Se verifica si el boton tiene la clase de girar y dependiendo se activa la clase 'animacionVer' la cual permite mostrar los btns flotantes
+* y se muestra el 'fbback_1' que es el div verde clarito que permite ocultar los controles
+*==============================================*/
+function clickBtnF1() {
+  $('.botonF1').click(function(){
+    if ($('.botonF1').hasClass('botonF1_girar')){
+      $('.botonF1').removeClass('botonF1_girar');
+      $('.btn_flotante').removeClass('animacionVer');
+      $('.fbback_1').hide();
+    }else{
+      $('.botonF1').addClass('botonF1_girar');
+      $('.btn_flotante').addClass('animacionVer');
+      $('.texto_boton_flotante').addClass('animacionVer');
+      $('.fbback_1').show();
+    }
+  })
+}
+
+/*=============================================
+* Funcion que se ejecuta cuando se presiona el boton guardar de la lista de inspeccion
+* Se quita la clase 'botonF1_girar' del btn (+) y se ocultan los btns flotantes al igual que el 'fbback_1'
+*==============================================*/
+function clickBtnF2_guardar() {
+  $('.botonF2').click(function(){
+    $('.botonF1').removeClass('botonF1_girar');
+    $('.btn_flotante').removeClass('animacionVer');
+    $('.fbback_1').hide();
+  })
+}
+
+/*=============================================
+* Funcion que se ejecuta cuando se deja de pasar el mouse por encima del btn (+)
+* Se quita la clase 'botonF1_girar' del btn (+) y se ocultan los btns flotantes al igual que el 'fbback_1'
+* En la aplicacion funciona es pinchando en el div verde 'fbback_1'
+*==============================================*/
+function dejarContenerdorBtnsFLot() {
+  $('.contenedor_btns_flotantes').mouseleave(function(){
+    $('.botonF1').removeClass('botonF1_girar');
+    $('.btn_flotante').removeClass('animacionVer');
+    $('.fbback_1').hide();
+  })
 }
 
 /*=============================================
@@ -273,6 +321,7 @@ function obtenerValoresIniciales(){
     success: function(response){
       $.each(response, function(i,items){
         var cliente = items.n_cliente;
+        var cliente_direccion = items.o_direccion_cliente;
         var nombre_equipo = items.n_equipo;
         var empresa_mto = items.n_empresamto;
         var accionamiento = items.o_tipoaccion;
@@ -285,7 +334,7 @@ function obtenerValoresIniciales(){
         var inicio_servicio = items.inicio_servicio;
         var ultima_inspeccion = items.ultima_inspeccion;
 
-        cargarValoresIniciales(cliente,nombre_equipo,empresa_mto,accionamiento,capac_person,capac_peso,num_paradas,fecha,consecutivo,ultimo_mto,inicio_servicio,ultima_inspeccion);
+        cargarValoresIniciales(cliente,cliente_direccion,nombre_equipo,empresa_mto,accionamiento,capac_person,capac_peso,num_paradas,fecha,consecutivo,ultimo_mto,inicio_servicio,ultima_inspeccion);
         obtenerValoresPreliminar(cod_inspector,cod_inspeccion);
       });
     }
@@ -295,8 +344,9 @@ function obtenerValoresIniciales(){
 /*=============================================
 * Funcion para mostrar los valores obtenidos de la consulta en los respectivos campos del formulario
 *==============================================*/
-function cargarValoresIniciales(cliente,nombre_equipo,empresa_mto,accionamiento,capac_person,capac_peso,num_paradas,fecha,consecutivo,ultimo_mto,inicio_servicio,ultima_inspeccion){
+function cargarValoresIniciales(cliente,cliente_direccion,nombre_equipo,empresa_mto,accionamiento,capac_person,capac_peso,num_paradas,fecha,consecutivo,ultimo_mto,inicio_servicio,ultima_inspeccion){
   $("#text_cliente").val(cliente);
+  $("#text_dir_cliente").val(cliente_direccion);
 	$("#text_equipo").val(nombre_equipo);
 	$("#text_empresaMantenimiento").val(empresa_mto);
 	$("#text_tipoAccionamiento").val(accionamiento);

@@ -6,6 +6,7 @@
 	$codigo_inspector = $_POST['inspector'];
 	$codigo_inspeccion = $_POST['inspeccion'];
 	$n_cliente=$_POST['n_cliente'];
+	$cliente_direccion = $_POST['cliente_direccion'];
 	$n_equipo=$_POST['n_equipo'];
 	$n_empresamto=$_POST['n_empresamto'];
 	$o_desc_puerta=$_POST['o_desc_puerta'];
@@ -56,6 +57,29 @@
                                                	WHERE 
                                                  k_codusuario=".$codigo_inspector." AND 
                                                  k_codinspeccion=".$codigo_inspeccion."";
+	mysqli_set_charset($con, "utf8"); //formato de datos utf8
+
+	if (mysqli_query($con,$sql) == true){
+		//echo "Registros guardados correctamente.";
+		//$bandera_sql += 1;
+	}else{
+	  	//echo $con->error."\nerror: ". $sql . "<br>";
+	  	$bandera_sql += 1;
+	}
+
+	/*=============================================
+	* CONSULTA QUE PERMITE OBTENER EL CODIGO DEL CLIENTE ASOCIADO A LA INSPECCION
+	*==============================================*/
+	$sql = "SELECT * FROM auditoria_inspecciones_puertas WHERE k_codusuario=".$codigo_inspector." AND k_codinspeccion=".$codigo_inspeccion."";
+	$result=mysqli_query($con, $sql);
+	while($row = mysqli_fetch_array($result)){
+		$k_codcliente = $row['k_codcliente'];
+	}
+
+	//generamos la consulta de actualizacion de la direccion del cliente
+	$sql = "UPDATE cliente SET o_direccion = '".$cliente_direccion."' 
+			WHERE k_codusuario=".$codigo_inspector." 
+			AND k_codcliente=".$k_codcliente."";
 	mysqli_set_charset($con, "utf8"); //formato de datos utf8
 
 	if (mysqli_query($con,$sql) == true){

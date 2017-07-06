@@ -499,7 +499,7 @@
                                                       echo "<b>Ver imagen:</b><br>";
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
-                                                            echo "*".$n_fotografia."<br>";
+                                                            echo $n_fotografia."<br>";
                                                             // echo '<a href="http://www.montajesyprocesos.com/inspeccion/servidor/escaleras/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';
