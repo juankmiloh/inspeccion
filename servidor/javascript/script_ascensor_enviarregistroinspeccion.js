@@ -82,10 +82,10 @@ function crearPDF(){
     servidor: "si"
   },function(e){
     //alert("crearPDF-> "+e);
-    //location.href="http://www.montajesyprocesos.com/inspeccion/servidor/php/ascensor_crear_pdf_inspeccion.php";
+    //location.href="http://192.168.0.26:8080/inspeccion/servidor/php/ascensor_crear_pdf_inspeccion.php";
     if (e == 0) {
       $('#texto_carga').text('PDF de inspección Saved...OK');
-      myWindow = window.open('http://www.montajesyprocesos.com/inspeccion/servidor/ascensores/servidor/inspector_'
+      myWindow = window.open('http://192.168.0.26:8080/inspeccion/servidor/ascensores/servidor/inspector_'
                   +codigo_inspector
                   +'/registros_pdf/'
                   +consecutivo_inspeccion

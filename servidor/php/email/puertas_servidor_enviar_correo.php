@@ -63,8 +63,8 @@ $contenidoHTML.='</body>';
 $contenidoHTML.='</html>';
 
 # Definimos el contenido en formato Texto del correo
-$contenidoTexto='Contenido en formato Texto';
-$contenidoTexto.='http://www.montajesyprocesos.co';
+$contenidoTexto='Visite nuestra página web: ';
+$contenidoTexto.='http://www.montajesyprocesos.com';
 
 # Definimos el subject
 $smtp->Subject="Inspecciones - ".$nombre_empresa;

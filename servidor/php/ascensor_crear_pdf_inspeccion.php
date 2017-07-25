@@ -919,6 +919,7 @@
       $dompdf -> set_paper("A4", "portrait");
       $dompdf -> load_html(ob_get_clean());
       $dompdf -> render();
+      // $dompdf->stream(); //LINEA QUE PERMITE DESCARGAR EL PDF GENERADO
 
       /*========================================================================
       * Se hace una consulta a la tabla de auditoria para saber si el campo de la contraseña esta vacio y asi poder generar una contraseña
