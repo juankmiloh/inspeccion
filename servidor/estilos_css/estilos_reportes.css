@@ -48,25 +48,22 @@ span{
   transform:scale(0);
   z-index:3;
   color: white;
-  background:#ffffff;
-  font-size:17px;
-  transition:0.5s;
 }
 .btn_flotante:hover{
   background: #c7c7c7;
   color: yellow;
 }
-.botonF2{  
+.botonF2{
+  background:#ffffff;
   margin-bottom:112px;
+  font-size:17px;
+  transition:0.5s;
 }
 .botonF3{
+  background:#ffffff;
   margin-bottom:177px;
-}
-.botonF4{
-  margin-bottom:242px;
-}
-.botonF5{
-  margin-bottom:307px;
+  font-size:17px;
+  transition:0.7s;
 }
 .texto_boton_flotante{
   width:400px;

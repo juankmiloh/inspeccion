@@ -31,6 +31,7 @@
 <body>
     <!-- DIV's de imagen de carga oculto -->
     <div class="fbback" style="z-index: 57;"></div>
+    <div class="fbback_1"></div> <!-- div que oculta los controles cuando se oprime el btnF1 -->
     
     <div class="container" id="fbdrag1">
         <div class="row">
@@ -87,6 +88,40 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+    <!--
+    * CONTENEDOR DEL BOTON FLOTANTE
+    -->
+    <div class="contenedor_btns_flotantes">
+        <button type="button" class="botonF1">
+            <span>+</span>
+        </button>
+        <a href="./cerrar_sesion_administrador.php">
+            <button type="button" class="btn_flotante botonF2">
+                <span class="texto_boton_flotante">Cerrar Sesión</span>
+                <span class="glyphicon glyphicon-lock img_boton_flotante"></span>
+            </button>
+        </a>
+        <a href="./admin_inspecciones_finalizadas.php">
+            <button type="button" class="btn_flotante botonF3">
+                <span class="texto_boton_flotante">Inspecciones Finalizadas</span>
+                <span class="glyphicon glyphicon-check img_boton_flotante"></span>
+            </button>
+        </a>
+        <a href="./admin_inspecciones_por_revision.php">
+            <button type="button" class="btn_flotante botonF4">
+                <span class="texto_boton_flotante">Inspecciones por Revisión</span>
+                <span class="glyphicon glyphicon-eye-open img_boton_flotante"></span>
+            </button>
+        </a>
+        <a href="./admin_generar_reportes.php">
+            <button type="submit" class="btn_flotante botonF5" id="btn_guardar">
+                <span class="texto_boton_flotante">Generar Reportes</span>
+                <span class="glyphicon glyphicon-list-alt img_boton_flotante"></span>
+            </button>
+        </a>
+        
+    </div>
 
     <div class="container-fluid">
         <header>

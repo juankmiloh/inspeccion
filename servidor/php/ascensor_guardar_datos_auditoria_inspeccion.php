@@ -50,7 +50,8 @@
                             k_codcliente,
                             k_codinforme,
                             k_codusuario_modifica,
-                            o_actualizar_inspeccion) 
+                            o_actualizar_inspeccion,
+                            f_carga_servidor) 
                     VALUES(".$cod_usuario.",
                            ".$cod_inspeccion.",   
                            '".$consecutivoinsp."',
@@ -60,7 +61,8 @@
                            '".$codcliente."',
                            '".$codinforme."',
                            ".$k_codusuario_modifica.",
-                           '".$o_actualizar_inspeccion."')";
+                           '".$o_actualizar_inspeccion."',
+                           now())";
       if (mysqli_query($con,$sql) == true){
         //echo "Consulta exitosa!";
         //$bandera_sql += 1;
