@@ -4,7 +4,7 @@
     include ("conexion_BD.php");
 
     //generamos la consulta
-    $sql = "SELECT * FROM usuarios WHERE n_usuario<>'Administrador' ORDER BY n_nombre asc";
+    $sql = "SELECT * FROM usuarios WHERE o_rol<>'Administrador' AND o_rol<>'Inspector_prueba' ORDER BY n_nombre asc";
     mysqli_set_charset($con, "utf8"); //formato de datos utf8
 
     if(!$result = mysqli_query($con, $sql)) die();

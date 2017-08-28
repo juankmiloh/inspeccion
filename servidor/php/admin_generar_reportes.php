@@ -133,12 +133,20 @@
             </div>
         </header>
 
+        <!-- 
+        * CUERPO DE LA PAGINA 
+        -->
+
         <div class="row">
             <div class="col-xs-12 col-md-12">
                 
             </div>
         </div>
         
+        <!-- 
+        * FOOTER 
+        -->
+
         <br>
         <div class="div_division sombra" id="div_focalizar"></div>
         <footer>

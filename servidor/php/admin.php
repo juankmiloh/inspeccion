@@ -17,11 +17,11 @@
     <title>PANEL DE ADMINISTRACIÓN</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="shortcut icon" href="../images/favicon_1.ico" type="image/vnd.microsoft.icon">
-    <script src="../js/jquery.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../estilos_css/estilo_admin_v1.css"/>
-    <script type="text/javascript" src="../javascript/script_admin_v5.js"/></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../estilos_css/estilo_admin_v2.css"/>
+    <script type="text/javascript" src="../javascript/script_admin_v6.js"/></script>
     <script type="text/javascript">
 		$(document).ready(function(){ 
             //alert("sirve js");
@@ -96,27 +96,21 @@
         <button type="button" class="botonF1">
             <span>+</span>
         </button>
-        <a href="./cerrar_sesion_administrador.php">
+        <a href="./admin_inspecciones_certificadas.php">
             <button type="button" class="btn_flotante botonF2">
-                <span class="texto_boton_flotante">Cerrar Sesión</span>
-                <span class="glyphicon glyphicon-lock img_boton_flotante"></span>
-            </button>
-        </a>
-        <a href="./admin_inspecciones_finalizadas.php">
-            <button type="button" class="btn_flotante botonF3">
-                <span class="texto_boton_flotante">Inspecciones Finalizadas</span>
+                <span class="texto_boton_flotante">Inspecciones Certificadas</span>
                 <span class="glyphicon glyphicon-check img_boton_flotante"></span>
             </button>
         </a>
         <a href="./admin_inspecciones_por_revision.php">
-            <button type="button" class="btn_flotante botonF4">
+            <button type="button" class="btn_flotante botonF3">
                 <span class="texto_boton_flotante">Inspecciones por Revisión</span>
                 <span class="glyphicon glyphicon-eye-open img_boton_flotante"></span>
             </button>
         </a>
         <a href="./admin_generar_reportes.php">
-            <button type="submit" class="btn_flotante botonF5" id="btn_guardar">
-                <span class="texto_boton_flotante">Generar Reportes</span>
+            <button type="submit" class="btn_flotante botonF4" id="btn_guardar">
+                <span class="texto_boton_flotante">Reportes de Inspeccciones</span>
                 <span class="glyphicon glyphicon-list-alt img_boton_flotante"></span>
             </button>
         </a>

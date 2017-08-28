@@ -19,7 +19,7 @@
 
     <link rel="shortcut icon" href="../images/favicon_1.ico" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../estilos_css/estilos_lista_inspeccionv2.css"/>
+    <link rel="stylesheet" type="text/css" href="../estilos_css/estilos_lista_inspeccionv3.css"/>
 
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -594,12 +594,12 @@
                                 <span>+</span>
                             </button>
                             <button type="submit" class="btn_flotante botonF2" id="btn_guardar" onclick="mostrarDivs();">
-                                <span class="texto_boton_flotante">Actualizar</span>
+                                <span class="texto_boton_flotante">Actualizar Inspección</span>
                                 <span class="glyphicon glyphicon-floppy-disk img_boton_flotante"></span>
                             </button>
                             <a href="javascript:window.close()">
                                 <button type="button" class="btn_flotante botonF3">
-                                    <span class="texto_boton_flotante">Cerrar</span>
+                                    <span class="texto_boton_flotante">Cerrar Pestaña</span>
                                     <span class="glyphicon glyphicon-eye-close img_boton_flotante"></span>
                                 </button>
                             </a>
