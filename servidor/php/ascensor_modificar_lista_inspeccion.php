@@ -20,10 +20,12 @@
     <link rel="shortcut icon" href="../images/favicon_1.ico" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../estilos_css/estilos_lista_inspeccionv3.css"/>
+    <link rel="stylesheet" href="../bower_components/sweetalert2/dist/sweetalert2.css" />
 
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/Concurrent.Thread.js"></script>
+    <script src="../bower_components/sweetalert2/dist/sweetalert2.js"></script>
     <script type="text/javascript" src="../javascript/script_ascensor_modificar_cargar_items.js"/></script>
     <script type="text/javascript" src="../javascript/script_ascensor_modificar_cargarvaloresv4.js"/></script>
     <script type="text/javascript" src="../javascript/script_ascensor_modificar_guardarinspeccionv2.js"/></script>

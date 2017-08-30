@@ -93,14 +93,8 @@
         <button type="button" class="botonF1">
             <span>+</span>
         </button>
-        <a href="./cerrar_sesion_administrador.php">
-            <button type="button" class="btn_flotante botonF2">
-                <span class="texto_boton_flotante">Cerrar Sesión</span>
-                <span class="glyphicon glyphicon-lock img_boton_flotante"></span>
-            </button>
-        </a>
         <a href="./admin.php">
-            <button type="submit" class="btn_flotante botonF3" id="btn_guardar">
+            <button type="submit" class="btn_flotante botonF2" id="btn_guardar">
                 <span class="texto_boton_flotante">Página Principal</span>
                 <span class="glyphicon glyphicon-home img_boton_flotante"></span>
             </button>

@@ -26,14 +26,37 @@ function cerrarVentanaCarga(){
   var cod_inspector = getQueryVariable('id_inspector');
   var codigo_inspeccion = getQueryVariable('cod_inspeccion');
   var consecutivo_inspeccion = $("#text_consecutivo").val();
-  message = 'Todo salio bien, se modifico la inspeccion Nº. ' + consecutivo_inspeccion;
-  if(navigator.notification && navigator.notification.alert){
-    navigator.notification.alert(message, null, "Montajes & Procesos M.P SAS", "Aceptar");
-    location.href="ascensor_modificar_lista_inspeccion.php?id_inspector="+cod_inspector+"&cod_inspeccion="+codigo_inspeccion+"";
-  }else{
-    alert(message);
-    location.href="ascensor_modificar_lista_inspeccion.php?id_inspector="+cod_inspector+"&cod_inspeccion="+codigo_inspeccion+"";
-  }
+  swal({
+    title: 'Todo salio bien!',
+    html: 'Se modifico la inspeccion Nº. ' + consecutivo_inspeccion + '<br>¿Desea cerrar la pestaña de inspección?',
+    type: 'success',
+    showCancelButton: true,
+    confirmButtonColor: '#428bca',
+    cancelButtonColor: '#d9534f',
+    confirmButtonText: 'Si',
+    cancelButtonText: 'No',
+    confirmButtonClass: 'btn btn-success',
+    cancelButtonClass: 'btn btn-danger',
+    buttonsStyling: true,
+    allowOutsideClick: false
+  }).then(function () {
+    window.close();
+  }, function (dismiss) {
+    // dismiss can be 'cancel', 'overlay',
+    // 'close', and 'timer'
+    if (dismiss === 'cancel') {
+      //location.href="ascensor_modificar_lista_inspeccion.php?id_inspector="+cod_inspector+"&cod_inspeccion="+codigo_inspeccion+"";
+      window.location.reload();
+    }
+  })
+  // message = 'Todo salio bien, se modifico la inspeccion Nº. ' + consecutivo_inspeccion;
+  // if(navigator.notification && navigator.notification.alert){
+  //   navigator.notification.alert(message, null, "Montajes & Procesos M.P SAS", "Aceptar");
+  //   location.href="ascensor_modificar_lista_inspeccion.php?id_inspector="+cod_inspector+"&cod_inspeccion="+codigo_inspeccion+"";
+  // }else{
+  //   alert(message);
+  //   location.href="ascensor_modificar_lista_inspeccion.php?id_inspector="+cod_inspector+"&cod_inspeccion="+codigo_inspeccion+"";
+  // }
 }
 
 /*=============================================

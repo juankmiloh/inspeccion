@@ -151,6 +151,7 @@
 					<th class="color_celda border-top border-bottom border-right">INSPECTOR</th>
 					<th class="color_celda border-top border-bottom border-right">CONSECUTIVO</th>
 					<th class="color_celda border-top border-bottom border-right">CLIENTE</th>
+					<th class="color_celda border-top border-bottom border-right">FECHA INSPECCIÓN</th>
 					<th class="color_celda border-top border-bottom">FECHA CARGA</th>
 				</tr>
 	<?php
@@ -188,11 +189,13 @@
 						$result_cliente=mysqli_query($con, $sql_cliente);
 					    $row_cliente = mysqli_fetch_array($result_cliente);
 					   	$n_cliente = $row_cliente['n_cliente'];
+					   	$f_fecha = $row_cliente['f_fecha'];
 	?>
 				<tr>
 					<td class="center border-bottom border-right"><? echo $n_nombre." ".$n_apellido;?></td>
 					<td class="center border-bottom border-right"><? echo $o_consecutivoinsp;?></td>
 					<td class="center border-bottom border-right"><? echo $n_cliente;?></td>
+					<td class="center border-bottom border-right"><? echo $f_fecha;?></td>
 					<td class="center border-bottom"><? echo $f_carga_servidor;?></td>
 				</tr>
 	<?php
@@ -281,6 +284,7 @@
 					<th class="color_celda border-top border-bottom border-right">INSPECTOR</th>
 					<th class="color_celda border-top border-bottom border-right">CONSECUTIVO</th>
 					<th class="color_celda border-top border-bottom border-right">CLIENTE</th>
+					<th class="color_celda border-top border-bottom border-right">FECHA INSPECCIÓN</th>
 					<th class="color_celda border-top border-bottom">FECHA CARGA</th>
 				</tr>
 	<?php
@@ -318,11 +322,13 @@
 						$result_cliente=mysqli_query($con, $sql_cliente);
 					    $row_cliente = mysqli_fetch_array($result_cliente);
 					   	$n_cliente = $row_cliente['n_cliente'];
+					   	$f_fecha = $row_cliente['f_fecha'];
 	?>
 				<tr>
 					<td class="center border-bottom border-right"><? echo $n_nombre." ".$n_apellido;?></td>
 					<td class="center border-bottom border-right"><? echo $o_consecutivoinsp;?></td>
 					<td class="center border-bottom border-right"><? echo $n_cliente;?></td>
+					<td class="center border-bottom border-right"><? echo $f_fecha;?></td>
 					<td class="center border-bottom"><? echo $f_carga_servidor;?></td>
 				</tr>
 	<?php
@@ -411,6 +417,7 @@
 					<th class="color_celda border-top border-bottom border-right">INSPECTOR</th>
 					<th class="color_celda border-top border-bottom border-right">CONSECUTIVO</th>
 					<th class="color_celda border-top border-bottom border-right">CLIENTE</th>
+					<th class="color_celda border-top border-bottom border-right">FECHA INSPECCIÓN</th>
 					<th class="color_celda border-top border-bottom">FECHA CARGA</th>
 				</tr>
 	<?php
@@ -448,11 +455,13 @@
 						$result_cliente=mysqli_query($con, $sql_cliente);
 					    $row_cliente = mysqli_fetch_array($result_cliente);
 					   	$n_cliente = $row_cliente['n_cliente'];
+					   	$f_fecha = $row_cliente['f_fecha'];
 	?>
 				<tr>
 					<td class="center border-bottom border-right"><? echo $n_nombre." ".$n_apellido;?></td>
 					<td class="center border-bottom border-right"><? echo $o_consecutivoinsp;?></td>
 					<td class="center border-bottom border-right"><? echo $n_cliente;?></td>
+					<td class="center border-bottom border-right"><? echo $f_fecha;?></td>
 					<td class="center border-bottom"><? echo $f_carga_servidor;?></td>
 				</tr>
 	<?php

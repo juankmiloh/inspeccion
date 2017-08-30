@@ -21,7 +21,9 @@
     <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="../estilos_css/estilo_admin_v2.css"/>
+    <link rel="stylesheet" href="../bower_components/sweetalert2/dist/sweetalert2.css" />
     <script type="text/javascript" src="../javascript/script_admin_v6.js"/></script>
+    <script src="../bower_components/sweetalert2/dist/sweetalert2.js"></script>
     <script type="text/javascript">
 		$(document).ready(function(){ 
             //alert("sirve js");
@@ -110,7 +112,7 @@
         </a>
         <a href="./admin_generar_reportes.php">
             <button type="submit" class="btn_flotante botonF4" id="btn_guardar">
-                <span class="texto_boton_flotante">Reportes de Inspeccciones</span>
+                <span class="texto_boton_flotante">Reporte de Inspeccciones</span>
                 <span class="glyphicon glyphicon-list-alt img_boton_flotante"></span>
             </button>
         </a>
