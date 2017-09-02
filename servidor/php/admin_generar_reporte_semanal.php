@@ -553,8 +553,9 @@
 		#   "correo"=>"nombre usuario"
 		# Se pueden poner tantos correos como se deseen
 		$mailTo=array(
-		    //"mgonzalez@montajesyprocesos.com"=>"Correo Administrador",
-		    //"rcardenas@montajesyprocesos.com"=>"Correo Administrador",
+		    // "mgonzalez@montajesyprocesos.com"=>"Correo Administrador",
+		    // "rcardenas@montajesyprocesos.com"=>"Correo Administrador",
+		    // "aux.contable@montajesyprocesos.com"=>"Correo Contadora",
 		    "juankmiloh@hotmail.com"=>"Correo Administrador"
 		);
 

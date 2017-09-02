@@ -28,7 +28,7 @@
     <script src="../bower_components/sweetalert2/dist/sweetalert2.js"></script>
     <script type="text/javascript" src="../javascript/script_ascensor_modificar_cargar_items.js"/></script>
     <script type="text/javascript" src="../javascript/script_ascensor_modificar_cargarvaloresv4.js"/></script>
-    <script type="text/javascript" src="../javascript/script_ascensor_modificar_guardarinspeccionv2.js"/></script>
+    <script type="text/javascript" src="../javascript/script_ascensor_modificar_guardar_inspeccionv3.js"/></script>
     <script type="text/javascript" src="../javascript/script_ascensor_enviarregistroinspeccion.js"/></script>
 </head>
 <body>
