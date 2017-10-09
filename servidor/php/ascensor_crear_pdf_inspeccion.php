@@ -789,22 +789,27 @@
       }                                
 ?>
                   <table>
-                        <tr>
-                              <td class="border-right border-bottom border-left" style="width: 33%;">    
-                              </td>  
-                              <td class="centrar_texto border-bottom" style="width: 11%;">
-                                    <b><?php echo $contador_it_leve; ?></b>
-                              </td>
-                              <td class="centrar_texto border-left border-bottom" style="width: 11%;">
-                                    <b><?php echo $contador_it_grave; ?></b>
-                              </td>
-                              <td class="centrar_texto border-left border-bottom" style="width: 11%;">
-                                    <b><?php echo $contador_it_muy_grave; ?></b>
-                              </td>
-                              <td class="border-left border-bottom border-right" style="width: 34%;">
-                              </td>
-                        </tr>
+                    <tr>
+                      <td class="border-right border-bottom border-left" style="width: 33%;"></td>  
+                      <td class="centrar_texto border-bottom" style="width: 11%;">
+                        <b><?php echo $contador_it_leve; ?></b>
+                      </td>
+                      <td class="centrar_texto border-left border-bottom" style="width: 11%;">
+                        <b><?php echo $contador_it_grave; ?></b>
+                      </td>
+                      <td class="centrar_texto border-left border-bottom" style="width: 11%;">
+                        <b><?php echo $contador_it_muy_grave; ?></b>
+                      </td>
+                      <td class="border-left border-bottom border-right" style="width: 34%;"></td>
+                    </tr>
                   </table>
+
+                  <?php
+                    $sql="UPDATE auditoria_inspecciones_ascensores SET v_item_leve=".$contador_it_leve.",v_item_grave=".$contador_it_grave.",v_item_muygrave=".$contador_it_muy_grave." WHERE k_codusuario=".$codigo_inspector." AND k_codinspeccion=".$codigo_inspeccion."";
+                    if (mysqli_query($con,$sql) == true){
+                      // echo "Registros guardados con éxito!";
+                    }
+                  ?>
 
                   <table border="0">
                         <tr>

@@ -6,7 +6,7 @@
   if(isset($_SESSION['Usuario'])){
       
   }else{
-      header("Location: ../index.php?Error=Acceso denegado");
+    header("Location: ../index.php?Error=Acceso denegado");
   }
   ob_end_flush();
 ?>
@@ -14,23 +14,21 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>PANEL DE ADMINISTRACIÓN</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="shortcut icon" href="../images/favicon_1.ico" type="image/vnd.microsoft.icon">
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../estilos_css/estilo_admin_v3.css"/>
+    <link rel="stylesheet" type="text/css" href="../estilos_css/estilo_admin_v4.css"/>
     <link rel="stylesheet" href="../bower_components/sweetalert2/dist/sweetalert2.css" />
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
     <script type="text/javascript" src="../javascript/script_admin_v6.js"/></script>
     <script src="../bower_components/sweetalert2/dist/sweetalert2.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){ 
-        //alert("sirve js");
-      });
-    </script>
+    <title>PANEL DE ADMINISTRACIÓN</title>
   </head>
-<body>
+<body ng-app="cardDemo" ng-controller="AppCtrl" ng-cloak>
   <!-- DIV's de imagen de carga oculto -->
   <div class="fbback" style="z-index: 57;"></div>
   <div class="fbback_1"></div> <!-- div que oculta los controles cuando se oprime el btnF1 -->
@@ -93,27 +91,33 @@
   * CONTENEDOR DEL BOTON FLOTANTE
   -->
   <div class="contenedor_btns_flotantes">
-  <button type="button" class="botonF1">
-    <span>+</span>
-  </button>
-  <a href="./admin_inspecciones_certificadas.php">
-    <button type="button" class="btn_flotante botonF2">
-      <span class="texto_boton_flotante">Inspecciones Certificadas</span>
-      <span class="glyphicon glyphicon-check img_boton_flotante"></span>
+    <button type="button" class="botonF1">
+      <span>+</span>
     </button>
-  </a>
-  <a href="./admin_inspecciones_por_revision.php">
-    <button type="button" class="btn_flotante botonF3">
-      <span class="texto_boton_flotante">Inspecciones por Revisión</span>
-      <span class="glyphicon glyphicon-eye-open img_boton_flotante"></span>
-    </button>
-  </a>
-  <a href="./admin_generar_reportes.php">
-    <button type="submit" class="btn_flotante botonF4" id="btn_guardar">
-      <span class="texto_boton_flotante">Reporte de Inspeccciones</span>
-      <span class="glyphicon glyphicon-list-alt img_boton_flotante"></span>
-    </button>
-  </a>
+    <!-- <a href="./admin_inspecciones_certificadas.php">
+      <button type="button" class="btn_flotante botonF2">
+        <span class="texto_boton_flotante"><b>Inspecciones Certificadas</b></span>
+        <span class="glyphicon glyphicon-check img_boton_flotante"></span>
+      </button>
+    </a>
+    <a href="./admin_inspecciones_por_revision.php">
+      <button type="button" class="btn_flotante botonF3">
+        <span class="texto_boton_flotante"><b>Inspecciones por Revisión</b></span>
+        <span class="glyphicon glyphicon-eye-open img_boton_flotante"></span>
+      </button>
+    </a>
+    <a href="./admin_generar_reportes.php">
+      <button type="submit" class="btn_flotante botonF4" id="btn_guardar">
+        <span class="texto_boton_flotante"><b>Reporte de Inspeccciones</b></span>
+        <span class="glyphicon glyphicon-list-alt img_boton_flotante"></span>
+      </button>
+    </a> -->
+    <a href="./admin_informes_inspeccion.php">
+      <button type="submit" class="btn_flotante botonF2" id="btn_guardar">
+        <span class="texto_boton_flotante"><b>Informes de inspección</b></span>
+        <span class="glyphicon glyphicon-file img_boton_flotante"></span>
+      </button>
+    </a>
   </div>
 
   <div class="container-fluid">
@@ -148,197 +152,123 @@
         <div class="div_division sombra"></div>
         <br>
         <center>
-          <h4><span><b>INFORMES DE INSPECCIÓN</b></span></h4>
+          <h4><span><b>INFORME GENERAL DE INSPECCIONES</b></span></h4>
         </center>
         <br>
         <div class="div_division sombra"></div>
         <br>             
       </div>
-      
-      <div class="col-xs-12 col-md-3"></div>
-      <div class="col-xs-12 col-md-3">
-        <label for="select_tipo_inspeccion">TIPO DE INSPECCIÓN</label>
-        <select class="form-control" id="select_tipo_inspeccion" name="select_tipo_inspeccion" onchange="enviarTipoInspeccion(this)">
-          <option value="n/a">Seleccione un tipo de inspección</option>
-          <option value="1">Ascensores</option>
-          <option value="2">Puertas Eléctricas</option>
-          <option value="3">Escaleras - Andenes</option>
-        </select>
-      </div>
-
-      <div class="col-xs-12 col-md-3" id="div_select_inspector">
-        <label for="select_inspector">INSPECTOR</label>
-        <select class="form-control" id="select_inspector" name="select_inspector" onchange="cargarInspecciones(this)">
-          <option value="n/a">Seleccione un inspector</option>
-        </select>
-      </div>
-      <div class="col-xs-12 col-md-3"></div>
     </div>
 
     <div class="row">
-      <div class="col-xs-12 col-md-3"></div>
-      <div class="col-xs-12 col-md-6">
-        <label for="select_inspecciones">INSPECCIÓN</label>
-        <select class="form-control" id="select_inspecciones" name="select_inspecciones" onchange="cargarDatos(this)">
-          <option value="n/a">Seleccione una inspección</option>
-        </select>
-      </div>
-      <div class="col-xs-12 col-md-3"></div>
-    </div>
+      <div class="col-xs-12 col-sm-12 col-md-12" style="border: 0px solid red;">
+        <div class="row">
+          <div class="col-xs-12 col-md-12">
+            <div>
+              <md-content class="md-padding" layout-xs="column" layout="row">
+                <div flex-xs flex-gt-xs="50" layout="column">
+                  <md-card md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
+                    <md-toolbar class="md-warn" style="background-color: #6A1B9A">
+                      <div class="md-toolbar-tools sombra">
+                        <span class="glyphicon glyphicon-compressed"></span>&nbsp
+                        <h2 class="md-flex"><b>ASCENSORES</b></h2>
+                      </div>
+                    </md-toolbar>
+                    <br>
+                    <div class="row" ng-repeat="option in options_ascensores">
+                      <div class="col-xs-12 col-md-12">
+                        <md-divider></md-divider>
+                        <md-subheader class="md-no-sticky">{{option.descripcion}}</md-subheader>
+                        <md-list-item class="md-3-line" ng-click="navigateTo(option.descripcion, $event, option)" ng-class="{active: activeOption == option}">
+                          <div class="md-list-item-text" layout="row">
+                            <div id="cajon1">
+                              <p class="desc_texto">{{option.text}}</p>
+                            </div>
+                            <div id="cajon2">
+                              <div class="padre">
+                                <div class="hijo">
+                                  <a ng-if="option.cantidad==0" href="#">{{option.cantidad}}</a>
+                                  <a ng-if="option.cantidad>0" href="#" style="color: #d9534f;">{{option.cantidad}}</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </md-list-item>
+                      </div>
+                    </div>
+                  </md-card>
+                </div>
 
-    <div id="div_ascensores">
-      <br>
-      <div class="div_division sombra"></div>
-      <br>
-      <div class="table-responsive">
-        <table class="table table-hover table-bordered" id="tabla_ascensores">
-          <thead>
-            <tr>
-              <th colspan="10" bgcolor="#70b6e0">
-                <center><b>RESUMEN DE INSPECCIÓN | ASCENSORES</b></center>
-              </th>
-            </tr>
-            <tr>
-              <th class="active centrar_texto">
-                <b>INSPECTOR</b>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>CONSECUTIVO</b></center>
-              </th>
-              <th class="active centrar_texto" style="width:10%">
-                <center><b>CLIENTE</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>REVISIÓN</b></center></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>NO CUMPLE</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>FECHA</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>AUDIO DE INFORME</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>PASS PDF</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>FOTOGRAFÍAS</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>DETALLE</b></center>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            
-          </tbody>
-        </table>
-      </div>
-    </div>
+                <div flex-xs flex-gt-xs="50" layout="column">
+                  <md-card md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
+                    <md-toolbar class="md-warn" style="background-color: #2196F3;">
+                      <div class="md-toolbar-tools sombra">
+                        <span class="glyphicon glyphicon-flash"></span>&nbsp
+                        <h2 class="md-flex"><b>PUERTAS ELÉCTRICAS</b></h2>
+                      </div>
+                    </md-toolbar>
+                    <br>
+                    <div class="row" ng-repeat="option in options_puertas">
+                      <div class="col-xs-12 col-md-12">
+                        <md-divider></md-divider>
+                        <md-subheader class="md-no-sticky">{{option.descripcion}}</md-subheader>
+                        <md-list-item class="md-3-line" ng-click="navigateTo(option.descripcion, $event, option)" ng-class="{active: activeOption == option}">
+                          <div class="md-list-item-text" layout="row">
+                            <div id="cajon1">
+                              <p class="desc_texto">{{option.text}}</p>
+                            </div>
+                            <div id="cajon2">
+                              <div class="padre">
+                                <div class="hijo">
+                                  <a ng-if="option.cantidad==0" href="#">{{option.cantidad}}</a>
+                                  <a ng-if="option.cantidad>0" href="#" style="color: #d9534f;">{{option.cantidad}}</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </md-list-item>
+                      </div>
+                    </div>
+                  </md-card>
+                </div>
 
-    <div id="div_puertas">
-      <br>
-      <div class="div_division sombra"></div>
-      <br>
-      <div class="table-responsive">
-        <table class="table table-hover table-bordered" id="tabla_puertas">
-          <thead>
-            <tr>
-              <th colspan="10" bgcolor="#70b6e0">
-                <center><b>RESUMEN DE INSPECCIÓN | PUERTAS</b></center>
-              </th>
-            </tr>
-            <tr>
-              <th class="active centrar_texto">
-                <b>INSPECTOR</b>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>CONSECUTIVO</b></center>
-              </th>
-              <th class="active centrar_texto" style="width:10%">
-                <center><b>CLIENTE</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>REVISIÓN</b></center></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>NO CUMPLE</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>FECHA</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>AUDIO DE INFORME</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>PASS PDF</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>FOTOGRAFÍAS</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>DETALLE</b></center>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
+                <div flex-xs flex-gt-xs="50" layout="column">
+                  <md-card md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
+                    <md-toolbar class="md-warn" style="background-color: #F44336;">
+                      <div class="md-toolbar-tools sombra">
+                        <span class="glyphicon glyphicon-signal"></span>&nbsp
+                        <h2 class="md-flex"><b>ESCALERAS / ANDENES</b></h2>
+                      </div>
+                    </md-toolbar>
+                    <br>
+                    <div class="row" ng-repeat="option in options_escaleras">
+                      <div class="col-xs-12 col-md-12">
+                        <md-divider></md-divider>
+                        <md-subheader class="md-no-sticky">{{option.descripcion}}</md-subheader>
+                        <md-list-item class="md-3-line" ng-click="navigateTo(option.descripcion, $event, option)" ng-class="{active: activeOption == option}">
+                          <div class="md-list-item-text" layout="row">
+                            <div id="cajon1">
+                              <p class="desc_texto">{{option.text}}</p>
+                            </div>
+                            <div id="cajon2">
+                              <div class="padre">
+                                <div class="hijo">
+                                  <a ng-if="option.cantidad==0" href="#">{{option.cantidad}}</a>
+                                  <a ng-if="option.cantidad>0" href="#" style="color: #d9534f;">{{option.cantidad}}</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </md-list-item>
+                      </div>
+                    </div>
+                  </md-card>
+                </div>
 
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div id="div_escaleras">
-      <br>
-      <div class="div_division sombra"></div>
-      <br>
-      <div class="table-responsive">
-        <table class="table table-hover table-bordered" id="tabla_escaleras">
-          <thead>
-            <tr>
-              <th colspan="10" bgcolor="#70b6e0">
-                <center><b>RESUMEN DE INSPECCIÓN | ESCALERAS</b></center>
-              </th>
-            </tr>
-            <tr>
-              <th class="active centrar_texto">
-                <b>INSPECTOR</b>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>CONSECUTIVO</b></center>
-              </th>
-              <th class="active centrar_texto" style="width:10%">
-                <center><b>CLIENTE</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>REVISIÓN</b></center></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>NO CUMPLE</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>FECHA</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>AUDIO DE INFORME</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>PASS PDF</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>FOTOGRAFÍAS</b></center>
-              </th>
-              <th class="active centrar_texto">
-                <center><b>DETALLE</b></center>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-
-          </tbody>
-        </table>
+              </md-content>
+            </div>
+          </div>       
+        </div>
       </div>
     </div>
     
@@ -355,7 +285,7 @@
         </div>
       </div>
     </footer>
-    <div class="row" style="width: 100%; position: fixed; bottom: 0px; border: 1px solid; background-color: #060d14;">
+    <div class="row" style="width: 100%; position: fixed; bottom: 0px; border: 1px solid; background-color: #060d14; z-index: 57">
       <div class="col-xs-12 col-md-12" style="text-align: center;">
         <span style="color: #ecf3f9;">Aplicación desarrollada por</span>
         <a href="mailto:juankmiloh@hotmail.com" style="color: #b3d0e9;">
@@ -363,7 +293,17 @@
         </a>
       </div>
     </div>
-    <br><br><br><br><br>
+    <br><br><br>
   </div>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-animate/angular-animate.js"></script>
+  <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="../bower_components/angular-resource/angular-resource.js"></script>
+  <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="../bower_components/angular-touch/angular-touch.js"></script>
+  <script src="../bower_components/angular-aria/angular-aria.js"></script>
+  <script src="../bower_components/angular-material/angular-material.js"></script>
+  <script type="text/javascript" src="../javascript/controller_admin_v1.js"/></script>
 </body>
 </html>

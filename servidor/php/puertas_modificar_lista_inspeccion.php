@@ -28,8 +28,8 @@
     <script src="../js/Concurrent.Thread.js"></script>
     <script type="text/javascript" src="../javascript/script_puertas_modificar_cargar_items.js"/></script>
     <script type="text/javascript" src="../javascript/script_puertas_modificar_cargar_valoresv1.js"/></script>
-    <script type="text/javascript" src="../javascript/script_puertas_modificar_guardarinspeccionv1.js"/></script>
-    <script type="text/javascript" src="../javascript/script_puertas_enviar_registro_inspeccion.js"/></script>
+    <script type="text/javascript" src="../javascript/script_puertas_modificar_guardarinspeccionv2.js"/></script>
+    <script type="text/javascript" src="../javascript/script_puertas_enviar_registro_inspeccionv2.js"/></script>
 </head>
 <body>
     <a name="arriba"></a> <!--ESTO SE PONE PARA CUANDO SE GUARDE, SE DEVUELVA A LA PARTE DE ARRIBA DE LA PAGINA-->

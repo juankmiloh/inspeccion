@@ -28,8 +28,8 @@
     <script src="../bower_components/sweetalert2/dist/sweetalert2.js"></script>
     <script type="text/javascript" src="../javascript/script_ascensor_modificar_cargar_items.js"/></script>
     <script type="text/javascript" src="../javascript/script_ascensor_modificar_cargarvaloresv4.js"/></script>
-    <script type="text/javascript" src="../javascript/script_ascensor_modificar_guardar_inspeccionv3.js"/></script>
-    <script type="text/javascript" src="../javascript/script_ascensor_enviarregistroinspeccion.js"/></script>
+    <script type="text/javascript" src="../javascript/script_ascensor_modificar_guardar_inspeccionv5.js"/></script>
+    <script type="text/javascript" src="../javascript/script_ascensor_enviarregistroinspeccionv7.js"/></script>
 </head>
 <body>
     <a name="arriba"></a> <!--ESTO SE PONE PARA CUANDO SE GUARDE, SE DEVUELVA A LA PARTE DE ARRIBA DE LA PAGINA-->

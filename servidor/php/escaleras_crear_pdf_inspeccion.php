@@ -500,7 +500,7 @@
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
                                                             echo $n_fotografia."<br>";
-                                                            // echo '<a href="http://192.168.0.26:8888/inspeccion/servidor/escaleras/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
+                                                            // echo '<a href="http://192.168.0.31:8888/inspeccion/servidor/escaleras/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';
                                                       }
@@ -534,6 +534,13 @@
                               </td>
                         </tr>
                   </table>
+
+                  <?php
+                    $sql="UPDATE auditoria_inspecciones_escaleras SET v_item_leve=".$contador_it_leve.",v_item_grave=".$contador_it_grave.",v_item_muygrave=".$contador_it_muy_grave." WHERE k_codusuario=".$codigo_inspector." AND k_codinspeccion=".$codigo_inspeccion."";
+                    if (mysqli_query($con,$sql) == true){
+                      // echo "Registros guardados con éxito!";
+                    }
+                  ?>
 
                   <table border="0">
                         <tr>

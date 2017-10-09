@@ -8,6 +8,9 @@
 	$consecutivo_insp = $_POST['consecutivo_insp'];
 	$estado_revision = $_POST['estado_revision'];
 	$cantidad_nocumple = $_POST['cantidad_nocumple'];
+	$cantidad_items_leve = $_POST['cantidad_items_leve'];
+	$cantidad_items_grave = $_POST['cantidad_items_grave'];
+	$cantidad_items_muygrave = $_POST['cantidad_items_muygrave'];
 	$o_actualizar_inspeccion = $_POST['o_actualizar_inspeccion'];
 
 	$bandera_sql = 0;
@@ -15,7 +18,10 @@
 	//generamos la consulta
 	$sql = "UPDATE auditoria_inspecciones_ascensores SET o_actualizar_inspeccion = '".$o_actualizar_inspeccion."',
 														 o_revision = '".$estado_revision."',
-			                                             v_item_nocumple = '".$cantidad_nocumple."' 
+			                                             v_item_nocumple = '".$cantidad_nocumple."',
+			                                             v_item_leve=".$cantidad_items_leve.",
+			                                             v_item_grave=".$cantidad_items_grave.",
+			                                             v_item_muygrave=".$cantidad_items_muygrave." 
 			                                           WHERE 
 			                                             k_codusuario=".$codigo_inspector." AND 
 			                                             k_codinspeccion=".$codigo_inspeccion."";

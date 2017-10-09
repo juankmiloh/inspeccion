@@ -40,7 +40,7 @@ function click_btn_iniciar_sesion(){
 		}else{
 			//si no esta visible
 			var focalizar = $("#div_btn_descargas").position().top;
-			$('.contenedor_login').show();
+			$('.contenedor_login').show("fast");
 			$('html,body').animate({scrollTop: focalizar}, 1000);
 		}
   	});
@@ -113,7 +113,7 @@ function descargarInspeccionMpApk(){
   $('.fb').show();
   $('.fbback').show();
   $('body').css('overflow','hidden');
-  location.href="http://192.168.0.26:8888/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk";
+  location.href="http://192.168.0.31:8888/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk";
   cerrarVentanaCarga();
 }
 
@@ -133,6 +133,6 @@ function descargarGrabadoraApk(){
   $('.fb').show();
   $('.fbback').show();
   $('body').css('overflow','hidden');
-  location.href="http://192.168.0.26:8888/inspeccion/servidor/aplicacion/grabadora.apk";
+  location.href="http://192.168.0.31:8888/inspeccion/servidor/aplicacion/grabadora.apk";
   cerrarVentanaCarga();
 }

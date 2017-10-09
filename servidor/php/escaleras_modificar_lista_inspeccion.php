@@ -28,8 +28,8 @@
     <script src="../js/Concurrent.Thread.js"></script>
     <script type="text/javascript" src="../javascript/script_escaleras_modificar_cargar_items.js"/></script>
     <script type="text/javascript" src="../javascript/script_escaleras_modificar_cargar_valoresv2.js"/></script>
-    <script type="text/javascript" src="../javascript/script_escaleras_modificar_guardar_inspeccionv1.js"/></script>
-    <script type="text/javascript" src="../javascript/script_escaleras_enviar_registroinspeccion.js"/></script>
+    <script type="text/javascript" src="../javascript/script_escaleras_modificar_guardar_inspeccionv2.js"/></script>
+    <script type="text/javascript" src="../javascript/script_escaleras_enviar_registroinspeccionv2.js"/></script>
 </head>
 <body>
     <a name="arriba"></a> <!--ESTO SE PONE PARA CUANDO SE GUARDE, SE DEVUELVA A LA PARTE DE ARRIBA DE LA PAGINA-->
