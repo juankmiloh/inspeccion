@@ -20,7 +20,7 @@
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../estilos_css/estilo_admin_v3.css"/>
+    <link rel="stylesheet" type="text/css" href="../estilos_css/estilo_admin_v4.css"/>
     <link rel="stylesheet" href="../bower_components/sweetalert2/dist/sweetalert2.css" />
     <script type="text/javascript" src="../javascript/script_admin_informes_inspeccion.js"/></script>
     <script src="../bower_components/sweetalert2/dist/sweetalert2.js"></script>
