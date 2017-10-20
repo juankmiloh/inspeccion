@@ -304,6 +304,6 @@
   <script src="../bower_components/angular-touch/angular-touch.js"></script>
   <script src="../bower_components/angular-aria/angular-aria.js"></script>
   <script src="../bower_components/angular-material/angular-material.js"></script>
-  <script type="text/javascript" src="../javascript/controller_admin_v1.js"/></script>
+  <script type="text/javascript" src="../javascript/controller_admin_v2.js"/></script>
 </body>
 </html>

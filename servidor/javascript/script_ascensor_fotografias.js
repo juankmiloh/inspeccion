@@ -119,7 +119,7 @@ function crearPDF(){
     //alert("crearPDF-> "+e);
     if (e == 0) {
       $('#texto_carga').text('PDF de inspección Saved...OK');
-      myWindow = window.open('http://192.168.0.31:8888/inspeccion/servidor/ascensores/servidor/inspector_'
+      myWindow = window.open('http://192.168.0.30:8888/inspeccion/servidor/ascensores/servidor/inspector_'
                   +codigo_inspector
                   +'/registros_pdf/'
                   +consecutivo_inspeccion

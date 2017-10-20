@@ -500,7 +500,7 @@
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
                                                             echo $n_fotografia."<br>";
-                                                            // echo '<a href="http://192.168.0.31:8888/inspeccion/servidor/escaleras/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
+                                                            // echo '<a href="http://192.168.0.30:8888/inspeccion/servidor/escaleras/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';
                                                       }

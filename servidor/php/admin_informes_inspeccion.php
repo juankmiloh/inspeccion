@@ -4,9 +4,9 @@
   header("access-control-allow-origin: *");
   include ("conexion_BD.php");
   if(isset($_SESSION['Usuario'])){
-      
+    
   }else{
-      header("Location: ../index.php?Error=Acceso denegado");
+    header("Location: ../index.php?Error=Acceso denegado");
   }
   ob_end_flush();
 ?>
