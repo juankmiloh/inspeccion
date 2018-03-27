@@ -113,7 +113,7 @@ function descargarInspeccionMpApk(){
   $('.fb').show();
   $('.fbback').show();
   $('body').css('overflow','hidden');
-  location.href="http://192.168.0.30:8888/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk";
+  location.href="http://192.168.0.26:8888/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk";
   cerrarVentanaCarga();
 }
 
@@ -133,6 +133,6 @@ function descargarGrabadoraApk(){
   $('.fb').show();
   $('.fbback').show();
   $('body').css('overflow','hidden');
-  location.href="http://192.168.0.30:8888/inspeccion/servidor/aplicacion/grabadora.apk";
+  location.href="http://192.168.0.26:8888/inspeccion/servidor/aplicacion/grabadora.apk";
   cerrarVentanaCarga();
 }
