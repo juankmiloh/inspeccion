@@ -41,7 +41,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="fb">
-                    <div class="dheader">Montajes & Procesos M.P SAS</div>
+                    <div class="dheader">Empresa</div>
                     <div class="dcontent">
                         <div style="text-align:center;padding-top:20px">
                             <center>

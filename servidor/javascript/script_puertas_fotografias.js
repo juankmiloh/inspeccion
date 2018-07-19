@@ -38,7 +38,7 @@ function cerrar_Ventana_Carga(message){
   $('body').css('overflow','auto');
   if (message != "mensaje_no") {
     if(navigator.notification && navigator.notification.alert){
-      navigator.notification.alert(message, null, "Montajes & Procesos M.P SAS", "Aceptar");
+      navigator.notification.alert(message, null, "Empresa", "Aceptar");
     }else{
       alert(message);
     }
@@ -119,7 +119,7 @@ function crearPDF(){
     //alert("crearPDF-> "+e);
     if (e == 0) {
       $('#texto_carga').text('PDF de inspección Saved...OK');
-      myWindow = window.open('http://192.168.0.26:8888/inspeccion/servidor/puertas/servidor/inspector_'
+      myWindow = window.open('http://www.montajesyprocesos.com/inspeccion/servidor/puertas/servidor/inspector_'
                   +codigo_inspector
                   +'/registros_pdf/'
                   +consecutivo_inspeccion

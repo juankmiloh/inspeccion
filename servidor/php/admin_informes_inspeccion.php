@@ -40,7 +40,7 @@
       <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="fb" style="z-index: 57;">
             <!--<span class="close" onclick="dragClose('fbdrag1')"></span>-->
-            <div class="dheader">MONTAJES & PROCESOS M.P SAS</div>
+            <div class="dheader">Empresa</div>
             <div class="dcontent">
               <div style="text-align:center;padding-top:20px">
                 <center>
@@ -114,7 +114,8 @@
         <span class="glyphicon glyphicon-list-alt img_boton_flotante"></span>
       </button>
     </a>
-    <a href="./admin.php">
+    <!-- <a href="./admin.php"> -->
+    <a href="#">
       <button type="submit" class="btn_flotante botonF5" id="btn_guardar">
         <span class="texto_boton_flotante">Página Principal</span>
         <span class="glyphicon glyphicon-home img_boton_flotante"></span>

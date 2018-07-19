@@ -2,7 +2,14 @@
       ob_start(); //Linea para permitir enviar flujo de datos por url al redireccionar la pagina
       header("access-control-allow-origin: *");
       include ("conexion_BD.php");
-      require_once("./dompdf/dompdf_config.inc.php");
+      //require_once("./dompdf/dompdf_config.inc.php");
+      require_once 'dompdf/lib/html5lib/Parser.php';
+      require_once 'dompdf/lib/php-font-lib/src/FontLib/Autoloader.php';
+      require_once 'dompdf/lib/php-svg-lib/src/autoload.php';
+      require_once 'dompdf/src/Autoloader.php';
+      Dompdf\Autoloader::register();
+      // reference the Dompdf namespace
+      use Dompdf\Dompdf;
 
       $codigo_inspector = $_POST['codigo_inspector'];
       $codigo_inspector_dispositivo = $_POST['codigo_inspector_dispositivo'];
@@ -500,7 +507,7 @@
                                                       while ($row=mysqli_fetch_array($result)) {
                                                             $n_fotografia = $row['n_fotografia'];
                                                             echo $n_fotografia."<br>";
-                                                            // echo '<a href="http://192.168.0.26:8888/inspeccion/servidor/escaleras/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
+                                                            // echo '<a href="http://www.montajesyprocesos.com/inspeccion/servidor/escaleras/inspector_'.$codigo_inspector.'/fotografias/'.$n_fotografia.'">
                                                             //             '.$n_fotografia.'
                                                             //       </a>';
                                                       }
@@ -651,10 +658,20 @@
       * Vamos a exportar el PDF de la inspeccion para previamente enviarlo por correo
       * El PDF se crea capturando todo el html generado
       *========================================================================*/
-      $dompdf = new DOMPDF();
-      $dompdf -> set_paper("A4", "portrait");
-      $dompdf -> load_html(ob_get_clean());
-      $dompdf -> render();
+      // instantiate and use the dompdf class
+      $dompdf = new Dompdf();
+      $dompdf->loadHtml(ob_get_clean());
+
+      // (Optional) Setup the paper size and orientation
+      $dompdf->setPaper('A4', 'portrait');
+
+      // Render the HTML as PDF
+      $dompdf->render();
+
+      // Output the generated PDF to Browser
+      //$dompdf->stream(); //LINEA QUE PERMITE DESCARGAR EL PDF GENERADO
+
+      ob_end_flush();
 
       /*========================================================================
       * Se hace una consulta a la tabla de auditoria para saber si el campo de la contraseña esta vacio y asi poder generar una contraseña
@@ -704,7 +721,6 @@
       file_put_contents($file_to_save, $dompdf->output());
       
       echo $bandera_sql;
-      ob_end_flush();
       //print_r($json_auditoria_escaleras);
       //echo $fecha_emision;
 

@@ -25,15 +25,15 @@ $smtp->CharSet="UTF-8";
 $smtp->SMTPAuth   = true;
 $smtp->SMTPSecure = "ssl";
 $smtp->Host       = "smtp.gmail.com";
-$smtp->Username   = "montajesyprocesoss@gmail.com";
-$smtp->Password   = "montajes";
+$smtp->Username   = "juankmiloardila@gmail.com";
+$smtp->Password   = "anamaria26";
 $smtp->Port       = 465;
 $smtp->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
 
 # datos de quien realiza el envio
 $smtp->From       = "correoQueEnviaElMensaje@miservidor.com"; // from mail
 //$smtp->FromName   = "Nombre persona que envia el correo"; // from mail name
-$smtp->FromName   = "MONTAJES & PROCESOS M.P SAS"; // from mail session_name()
+$smtp->FromName   = "Empresa"; // from mail session_name()
 
 # Indicamos las direcciones donde enviar el mensaje con el formato
 #   "correo"=>"nombre usuario"
@@ -65,7 +65,7 @@ $contenidoHTML.='</html>';
 
 # Definimos el contenido en formato Texto del correo
 $contenidoTexto='Visite nuestra página web: ';
-$contenidoTexto.='http://www.montajesyprocesos.com';
+$contenidoTexto.='http://agiliza.byethost13.com';
 
 # Definimos el subject
 $smtp->Subject="Inspecciones - ".$nombre_empresa;

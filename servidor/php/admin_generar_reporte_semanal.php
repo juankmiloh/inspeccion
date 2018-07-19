@@ -3,8 +3,15 @@
 	header("access-control-allow-origin: *");
 	header("Content-Type: text/html; charset=iso-8859-1");
 	include ("conexion_BD.php");
-	require_once("./dompdf/dompdf_config.inc.php");
+	//require_once("./dompdf/dompdf_config.inc.php");
 	include("./email/phpmailer.php");
+	require_once 'dompdf/lib/html5lib/Parser.php';
+	require_once 'dompdf/lib/php-font-lib/src/FontLib/Autoloader.php';
+	require_once 'dompdf/lib/php-svg-lib/src/autoload.php';
+	require_once 'dompdf/src/Autoloader.php';
+	Dompdf\Autoloader::register();
+	// reference the Dompdf namespace
+	use Dompdf\Dompdf;
 ?>
 
 <!DOCTYPE html>
@@ -505,11 +512,21 @@
 	* FUNCION PARA CREAR EL PDF DEL REPORTE
 	*========================================================================*/
 	function crearPDF($fecha_actual){
-		$dompdf = new DOMPDF();
-		$dompdf -> set_paper("A4", "portrait");
-		$dompdf -> load_html(ob_get_clean());
-		$dompdf -> render();
-		// $dompdf->stream(); //LINEA QUE PERMITE DESCARGAR EL PDF GENERADO
+		// instantiate and use the dompdf class
+		$dompdf = new Dompdf();
+		$dompdf->loadHtml(ob_get_clean());
+
+		// (Optional) Setup the paper size and orientation
+		$dompdf->setPaper('A4', 'portrait');
+
+		// Render the HTML as PDF
+		$dompdf->render();
+
+		// Output the generated PDF to Browser
+		//$dompdf->stream(); //LINEA QUE PERMITE DESCARGAR EL PDF GENERADO
+
+		ob_end_flush();
+
 		$file_to_save = "../reportes/reporte_".$fecha_actual.".pdf";
 		mkdir(dirname($file_to_save), 0777, true); //esta linea es para crear el directorio si no existe
 		file_put_contents($file_to_save, $dompdf->output());
@@ -539,23 +556,23 @@
 		$smtp->SMTPAuth   = true;
 		$smtp->SMTPSecure = "ssl";
 		$smtp->Host       = "smtp.gmail.com";
-		$smtp->Username   = "montajesyprocesoss@gmail.com";
-		$smtp->Password   = "montajes";
+		$smtp->Username   = "juankmiloardila@gmail.com";
+		$smtp->Password   = "anamaria26";
 		$smtp->Port       = 465;
 		$smtp->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
 
 		# datos de quien realiza el envio
 		$smtp->From       = "correoQueEnviaElMensaje@miservidor.com"; // from mail
 		//$smtp->FromName   = "Nombre persona que envia el correo"; // from mail name
-		$smtp->FromName   = "MONTAJES & PROCESOS M.P SAS"; // from mail session_name()
+		$smtp->FromName   = "Empresa"; // from mail session_name()
 
 		# Indicamos las direcciones donde enviar el mensaje con el formato
 		#   "correo"=>"nombre usuario"
 		# Se pueden poner tantos correos como se deseen
 		$mailTo=array(
-		    // "mgonzalez@montajesyprocesos.com"=>"Correo Administrador",
-		    // "rcardenas@montajesyprocesos.com"=>"Correo Administrador",
-		    // "aux.contable@montajesyprocesos.com"=>"Correo Contadora",
+		    //"mgonzalez@montajesyprocesos.com"=>"Correo Administrador",
+		    //"rcardenas@montajesyprocesos.com"=>"Correo Administrador",
+		    //"aux.contable@montajesyprocesos.com"=>"Correo Contadora",
 		    "juankmiloh@hotmail.com"=>"Correo Administrador"
 		);
 
@@ -578,7 +595,7 @@
 
 		# Definimos el contenido en formato Texto del correo
 		$contenidoTexto='Visite nuestra página web: ';
-		$contenidoTexto.='http://www.montajesyprocesos.com';
+		$contenidoTexto.='http://agiliza.byethost13.com';
 
 		# Definimos el subject
 		$smtp->Subject="REPORTE SEMANAL DE INSPECCIONES";
@@ -622,6 +639,5 @@
 		if($bandera == 0){
 		    // echo "envio de correo exitoso!";
 		}
-		ob_end_flush();
 	}
 ?>

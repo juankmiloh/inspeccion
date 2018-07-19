@@ -38,7 +38,7 @@
       <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="fb" style="z-index: 57;">
             <!--<span class="close" onclick="dragClose('fbdrag1')"></span>-->
-            <div class="dheader">MONTAJES & PROCESOS M.P SAS</div>
+            <div class="dheader">Empresa</div>
             <div class="dcontent">
               <div style="text-align:center;padding-top:20px">
                 <center>

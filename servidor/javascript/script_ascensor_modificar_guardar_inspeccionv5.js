@@ -55,7 +55,7 @@ function cerrarVentanaCarga(){
   })
   // message = 'Todo salio bien, se modifico la inspeccion Nº. ' + consecutivo_inspeccion;
   // if(navigator.notification && navigator.notification.alert){
-  //   navigator.notification.alert(message, null, "Montajes & Procesos M.P SAS", "Aceptar");
+  //   navigator.notification.alert(message, null, "Empresa", "Aceptar");
   //   location.href="ascensor_modificar_lista_inspeccion.php?id_inspector="+cod_inspector+"&cod_inspeccion="+codigo_inspeccion+"";
   // }else{
   //   alert(message);

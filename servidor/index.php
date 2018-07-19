@@ -20,7 +20,7 @@
       <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="fb" style="z-index: 57;">
           <!--<span class="close" onclick="dragClose('fbdrag1')"></span>-->
-          <div class="dheader">MONTAJES & PROCESOS M.P SAS</div>
+          <div class="dheader">Empresa</div>
           <div class="dcontent">
             <div style="text-align:center;padding-top:20px">
               <center>
@@ -109,22 +109,22 @@
         ?>
         <div class="col-xs-12 col-sm-12 col-md-12" id="div_btn_descargas">
           <hr>
-          <!--<a href="http://192.168.0.26:8888/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk">-->
+          <!--<a href="http://www.montajesyprocesos.com/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk">-->
           <button type="submit" class="btn btn-success btn-lg boton" id="btn_descargas">
             <span class="glyphicon glyphicon-cloud-download"></span>
             DESCARGAS
           </button> 
         </div> 
         <div class="col-xs-12 col-sm-12 col-md-12" id="div_btn_inspeccion_apk">
-          <!--<a href="http://192.168.0.26:8888/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk">-->
+          <!--<a href="http://www.montajesyprocesos.com/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk">-->
           <button type="submit" class="btn btn-success btn-lg boton" id="btn_descargar_inspeccion">
             <span class="glyphicon glyphicon-phone"></span>
-            INSPECCIÓN MP (.apk)
+            APP INSPECCIÓN (.apk)
           </button>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12" id="div_btn_grabadora_apk">
           <hr>
-          <!--<a href="http://192.168.0.26:8888/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk">-->
+          <!--<a href="http://www.montajesyprocesos.com/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk">-->
           <button type="submit" class="btn btn-success btn-lg boton" id="btn_descargar_grabadora">
             <span class="glyphicon glyphicon-phone"></span>
             GRABADORA SONIDOS (.apk)
@@ -132,7 +132,7 @@
         </div>  
         <div class="col-xs-12 col-sm-12 col-md-12" id="div_btn_regresar">
           <hr>
-          <!--<a href="http://192.168.0.26:8888/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk">-->
+          <!--<a href="http://www.montajesyprocesos.com/inspeccion/servidor/aplicacion/Inspeccion_MP-debug.apk">-->
           <button type="submit" class="btn btn-success btn-lg boton" id="btn_regresar">
             <span class="glyphicon glyphicon-backward"></span>
             REGRESAR

@@ -16,8 +16,8 @@
 	}
 	if (isset($arreglo)) {
 		$_SESSION['Usuario']=$arreglo;
-		header("Location: ./admin.php");
-		// header("Location: ./admin_informes_inspeccion.php");
+		//header("Location: ./admin.php");
+		header("Location: ./admin_informes_inspeccion.php");
 	} else {
 		header("Location: ../index.php?error=datos no validos");
 	}
